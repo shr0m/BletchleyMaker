@@ -73,10 +73,10 @@
             ruleBox = new TextBox();
             label1 = new Label();
             execute = new Button();
-            outputBox = new Label();
             label4 = new Label();
             decodeCheck = new CheckBox();
             supportButton = new Button();
+            outputBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -598,17 +598,6 @@
             execute.UseVisualStyleBackColor = true;
             execute.Click += execute_Click;
             // 
-            // outputBox
-            // 
-            outputBox.BackColor = Color.Gainsboro;
-            outputBox.BorderStyle = BorderStyle.FixedSingle;
-            outputBox.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            outputBox.Location = new Point(350, 42);
-            outputBox.Name = "outputBox";
-            outputBox.Size = new Size(284, 117);
-            outputBox.TabIndex = 50;
-            outputBox.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -643,16 +632,30 @@
             supportButton.UseVisualStyleBackColor = true;
             supportButton.Click += supportButton_Click;
             // 
+            // outputBox
+            // 
+            outputBox.BackColor = Color.Gainsboro;
+            outputBox.CharacterCasing = CharacterCasing.Upper;
+            outputBox.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            outputBox.Location = new Point(368, 46);
+            outputBox.MaxLength = 44;
+            outputBox.Multiline = true;
+            outputBox.Name = "outputBox";
+            outputBox.ReadOnly = true;
+            outputBox.Size = new Size(257, 103);
+            outputBox.TabIndex = 54;
+            outputBox.TextAlign = HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(661, 340);
+            Controls.Add(outputBox);
             Controls.Add(supportButton);
             Controls.Add(decodeCheck);
             Controls.Add(label4);
-            Controls.Add(outputBox);
             Controls.Add(execute);
             Controls.Add(label1);
             Controls.Add(ruleBox);
@@ -751,14 +754,13 @@
         private CheckBox useSymbols;
         private Button makeGrid;
         private TextBox inputBox;
-        private TextBox decodeBox;
         private Label label3;
         private TextBox ruleBox;
         private Label label1;
         private Button execute;
-        private Label outputBox;
         private Label label4;
         private CheckBox decodeCheck;
         private Button supportButton;
+        private TextBox outputBox;
     }
 }
