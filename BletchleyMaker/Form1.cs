@@ -196,14 +196,17 @@ namespace BletchleyMaker
             string[] decodeRules = { "X", "U1", "D1", "L1", "R1", "U2", "U3", "U4", "U5", "L2", "L3", "L4", "L5", "D2", "D3", "D4", "D5", "R2", "R3", "R4", "R5" };
             string[] encodeRules = { "X", "D1", "U1", "R1", "L1", "D2", "D3", "D4", "D5", "R2", "R3", "R4", "R5", "U2", "U3", "U4", "U5", "L2", "L3", "L4", "L5" };
 
+            int final = 0;
             for (int i = 0; i < decodeRules.Length; i++)
             {
                 if (decodeRules[i] == r)
                 {
-                    EncodeRule = encodeRules[i];
+                    final = i;
+                    break;
                 }
             }
 
+            EncodeRule = encodeRules[final];
         }
 
         public void Encode(char[,] gridArray)
