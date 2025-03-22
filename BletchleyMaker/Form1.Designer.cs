@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             col1row1 = new Label();
             pictureBox1 = new PictureBox();
             col5row1 = new Label();
@@ -75,6 +76,7 @@
             outputBox = new Label();
             label4 = new Label();
             decodeCheck = new CheckBox();
+            supportButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -630,12 +632,24 @@
             decodeCheck.Text = "Decode";
             decodeCheck.UseVisualStyleBackColor = true;
             // 
+            // supportButton
+            // 
+            supportButton.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            supportButton.Location = new Point(12, 12);
+            supportButton.Name = "supportButton";
+            supportButton.Size = new Size(75, 23);
+            supportButton.TabIndex = 53;
+            supportButton.Text = "Support";
+            supportButton.UseVisualStyleBackColor = true;
+            supportButton.Click += supportButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(661, 340);
+            Controls.Add(supportButton);
             Controls.Add(decodeCheck);
             Controls.Add(label4);
             Controls.Add(outputBox);
@@ -683,7 +697,9 @@
             Controls.Add(col5row1);
             Controls.Add(col1row1);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 1, 2, 1);
+            MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -743,5 +759,6 @@
         private Label outputBox;
         private Label label4;
         private CheckBox decodeCheck;
+        private Button supportButton;
     }
 }
