@@ -4,7 +4,7 @@ A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The p
 ## Features Available
 - Encoding plaintext sentences into Bletchley Park ciphertext
 - Generating a randomised decryption table (6x6 A-Z 0-9), includes symbols
-- Decoding input ciphertext (potential future feature)
+- Decoding input ciphertext
 
 ## Support
 Any issues can be reported in the issues tab of this repository. However, the developer may also be contacted through: jan.korzybski@proton.me
