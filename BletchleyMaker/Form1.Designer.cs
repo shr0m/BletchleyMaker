@@ -74,6 +74,7 @@
             execute = new Button();
             outputBox = new Label();
             label4 = new Label();
+            decodeCheck = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -559,16 +560,16 @@
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(350, 167);
             label3.Name = "label3";
-            label3.Size = new Size(36, 16);
+            label3.Size = new Size(88, 16);
             label3.TabIndex = 46;
-            label3.Text = "Rule";
+            label3.Text = "Decode Rule";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ruleBox
             // 
             ruleBox.Location = new Point(350, 186);
             ruleBox.Name = "ruleBox";
-            ruleBox.Size = new Size(66, 23);
+            ruleBox.Size = new Size(87, 23);
             ruleBox.TabIndex = 47;
             // 
             // label1
@@ -618,12 +619,24 @@
             label4.Text = "Output";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // decodeCheck
+            // 
+            decodeCheck.AutoSize = true;
+            decodeCheck.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            decodeCheck.Location = new Point(456, 187);
+            decodeCheck.Name = "decodeCheck";
+            decodeCheck.Size = new Size(74, 20);
+            decodeCheck.TabIndex = 52;
+            decodeCheck.Text = "Decode";
+            decodeCheck.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(661, 340);
+            Controls.Add(decodeCheck);
             Controls.Add(label4);
             Controls.Add(outputBox);
             Controls.Add(execute);
@@ -729,5 +742,6 @@
         private Button execute;
         private Label outputBox;
         private Label label4;
+        private CheckBox decodeCheck;
     }
 }

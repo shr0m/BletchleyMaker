@@ -1,13 +1,23 @@
 using System.CodeDom.Compiler;
+using System.Reflection;
+using System.Windows.Forms.VisualStyles;
 using Microsoft.Win32.SafeHandles;
 
 namespace BletchleyMaker
 {
     public partial class Form1 : Form
     {
+        public Grid grid;
+        public List<Label> componentArray;
+
         public Form1()
         {
             InitializeComponent();
+
+            componentArray = new List<Label>{ col1row1, col2row1, col3row1, col4row1, col5row1, col6row1, col1row2, col2row2, col3row2, col4row2, col5row2, col6row2, col1row3, col2row3, col3row3, col4row3, col5row3, col6row3, col1row4, col2row4, col3row4, col4row4, col5row4, col6row4, col1row5, col2row5, col3row5, col4row5, col5row5, col6row5, col1row6, col2row6, col3row6, col4row6, col5row6, col6row6 };
+            grid = new Grid(componentArray);
+
+            grid.Generate(false);
         }
 
         private void makeGrid_Click(object sender, EventArgs e)
@@ -19,9 +29,6 @@ namespace BletchleyMaker
                 return;
             }
 
-            Label[] components = { col1row1, col2row1, col3row1, col4row1, col5row1, col6row1, col1row2, col2row2, col3row2, col4row2, col5row2, col6row2, col1row3, col2row3, col3row3, col4row3, col5row3, col6row3, col1row4, col2row4, col3row4, col4row4, col5row4, col6row4, col1row5, col2row5, col3row5, col4row5, col5row5, col6row5, col1row6, col2row6, col3row6, col4row6, col5row6, col6row6 };
-
-            Grid grid = new Grid(components);
             if (useSymbols.Checked)
                 grid.Generate(true);
             else
@@ -32,21 +39,53 @@ namespace BletchleyMaker
 
         private void execute_Click(object sender, EventArgs e)
         {
-            string input = inputBox.Text;
-            string rule = ruleBox.Text;
+            string input = inputBox.Text.ToUpper();
+            string rule = ruleBox.Text.ToUpper();
 
-            outputBox.Text = input;
+            if (!ValidateRule(rule))
+            { return; }
+
+            Cipher cipher = new Cipher(input, rule);
+            cipher.Encode(grid.GetGrid());
+            outputBox.Text = cipher.GetText();
+
+        }
+
+        private bool ValidateRule(string rule)
+        {
+            string[] availableRules = { "X", "U1", "D1", "L1", "R1", "U2", "U3", "U4", "U5", "L2", "L3", "L4", "L5", "D2", "D3", "D4", "D5", "R2", "R3", "R4", "R5" };
+
+            bool valid = false;
+
+            foreach (string availableRule in availableRules)
+            {
+                if (availableRule == rule)
+                { valid = true; break; }
+            }
+            if (!valid)
+            {
+                ThrowError(0);
+            }
+            return valid;
+
+        }
+
+        public void ThrowError(int errorType)
+        {
+            string[] errors = { "INCORRECT RULE" };
+
+            outputBox.Text = "Error occured: " + errors[errorType];
         }
     }
 
     public class Grid
     {
         private char[] gridArr = new char[36];
-        private Label[] components;
+        private List<Label> components;
 
-        public Grid(Label[] compo)
+        public Grid(List<Label> compo)
         {
-            for (int i = 0; i < compo.Length; i++)
+            for (int i = 0; i < compo.Count; i++)
             {
                 gridArr[i] = Convert.ToChar(compo[i].Text);
             }
@@ -67,7 +106,7 @@ namespace BletchleyMaker
                 gridArr[i] = chosenChars[chosenIndex];
                 chosenChars.RemoveAt(chosenIndex);
             }
-            for (int i = 0; i < components.Length; i++)
+            for (int i = 0; i < components.Count; i++)
             {
                 components[i].Text = gridArr[i].ToString();
             }
@@ -92,5 +131,130 @@ namespace BletchleyMaker
             }
             return final;
         }
+    }
+
+    public class Cipher
+    {
+
+        private string Text;
+        private string EncodeRule;
+        private string DecodeRule;
+        
+        public Cipher(string plain, string r)
+        {
+            Text = plain;
+            DecodeRule = r;
+            string[] decodeRules = { "X", "U1", "D1", "L1", "R1", "U2", "U3", "U4", "U5", "L2", "L3", "L4", "L5", "D2", "D3", "D4", "D5", "R2", "R3", "R4", "R5" };
+            string[] encodeRules = { "X", "D1", "U1", "R1", "L1", "D2", "D3", "D4", "D5", "R2", "R3", "R4", "R5", "U2", "U3", "U4", "U5", "L2", "L3", "L4", "L5" };
+
+            for (int i = 0; i < decodeRules.Length; i++)
+            {
+                if (decodeRules[i] == r)
+                {
+                    EncodeRule = encodeRules[i];
+                }
+            }
+
+        }
+
+        public void Encode(char[,] gridArray)
+        {
+            RemoveWhitespace();
+            char ruleChoice = EncodeRule[0];
+
+            switch (ruleChoice)
+            {
+                case 'R':
+                    RightEncode(gridArray); break;
+                case 'L':
+                    LeftEncode(gridArray); break;
+                case 'U':
+                    UpEncode(gridArray); break;
+                case 'D':
+                    DownEncode(gridArray); break;
+            }
+        }
+
+        private void UpEncode(char[,] gridArray)
+        {
+            int index = Convert.ToInt32(EncodeRule[1]);
+            string final = "";
+
+            for (int i = 0; i < Text.Length; i++)
+            {
+                int row = -1, column = -1;
+
+                for (int r = 0; r < 6; r++)
+                {
+                    for (int c = 0; c < 6; c++)
+                    {
+                        if (Text[i] == gridArray[r, c])
+                        {
+                            row = r;
+                            column = c;
+                            break;
+                        }
+                    }
+                    if (row != -1) break;
+                }
+
+                if (row == -1 || column == -1)
+                {
+                    final += Text[i];
+                    continue;
+                }
+
+                for (int j = 0; j < index; j++)
+                {
+                    if (row == 0)
+                    {
+                        row = 5; 
+                    }
+                    else
+                    {
+                        row--;
+                    }
+                }
+
+
+                final += gridArray[row, column];
+            }
+
+            Text = final; 
+        }
+
+        private void DownEncode(char[,] gridArray)
+        {
+
+        }
+
+        private void LeftEncode(char[,] gridArray)
+        {
+
+        }
+
+        private void RightEncode(char[,] gridArray)
+        {
+
+        }
+
+        private void RemoveWhitespace()
+        {
+            string final = "";
+            foreach (char c in Text)
+            {
+                if (c != ' ')
+                {
+                    final += c;
+                }
+            }
+            Text = final;
+        }
+
+        public string GetText()
+        {
+            return Text;
+        }
+
     }
 }
