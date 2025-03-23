@@ -66,7 +66,6 @@
             col1row5 = new Label();
             col6row4 = new Label();
             col5row4 = new Label();
-            useSymbols = new CheckBox();
             makeGrid = new Button();
             inputBox = new TextBox();
             label3 = new Label();
@@ -77,6 +76,7 @@
             decodeCheck = new CheckBox();
             supportButton = new Button();
             outputBox = new TextBox();
+            copyButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -524,25 +524,13 @@
             col5row4.Text = "X";
             col5row4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // useSymbols
-            // 
-            useSymbols.AutoSize = true;
-            useSymbols.Font = new Font("Arial", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            useSymbols.Location = new Point(34, 292);
-            useSymbols.Margin = new Padding(2, 1, 2, 1);
-            useSymbols.Name = "useSymbols";
-            useSymbols.Size = new Size(115, 20);
-            useSymbols.TabIndex = 40;
-            useSymbols.Text = "Use Symbols";
-            useSymbols.UseVisualStyleBackColor = true;
-            // 
             // makeGrid
             // 
             makeGrid.Font = new Font("Arial", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            makeGrid.Location = new Point(169, 289);
+            makeGrid.Location = new Point(96, 289);
             makeGrid.Margin = new Padding(2, 1, 2, 1);
             makeGrid.Name = "makeGrid";
-            makeGrid.Size = new Size(129, 22);
+            makeGrid.Size = new Size(131, 41);
             makeGrid.TabIndex = 41;
             makeGrid.Text = "Generate Grid";
             makeGrid.UseVisualStyleBackColor = true;
@@ -554,6 +542,7 @@
             inputBox.Name = "inputBox";
             inputBox.Size = new Size(284, 23);
             inputBox.TabIndex = 44;
+            inputBox.KeyDown += inputBox_KeyDown;
             // 
             // label3
             // 
@@ -573,6 +562,7 @@
             ruleBox.Name = "ruleBox";
             ruleBox.Size = new Size(87, 23);
             ruleBox.TabIndex = 47;
+            ruleBox.TextChanged += ruleBox_TextChanged;
             // 
             // label1
             // 
@@ -581,9 +571,9 @@
             label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(350, 228);
             label1.Name = "label1";
-            label1.Size = new Size(39, 16);
+            label1.Size = new Size(103, 16);
             label1.TabIndex = 48;
-            label1.Text = "Input";
+            label1.Text = "Text to Convert";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // execute
@@ -592,7 +582,7 @@
             execute.Location = new Point(443, 289);
             execute.Margin = new Padding(2, 1, 2, 1);
             execute.Name = "execute";
-            execute.Size = new Size(87, 22);
+            execute.Size = new Size(87, 28);
             execute.TabIndex = 49;
             execute.Text = "Execute";
             execute.UseVisualStyleBackColor = true;
@@ -603,7 +593,7 @@
             label4.AutoSize = true;
             label4.BackColor = SystemColors.Control;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(350, 20);
+            label4.Location = new Point(350, 9);
             label4.Name = "label4";
             label4.Size = new Size(49, 16);
             label4.TabIndex = 51;
@@ -637,7 +627,7 @@
             outputBox.BackColor = Color.Gainsboro;
             outputBox.CharacterCasing = CharacterCasing.Upper;
             outputBox.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            outputBox.Location = new Point(368, 46);
+            outputBox.Location = new Point(367, 28);
             outputBox.MaxLength = 44;
             outputBox.Multiline = true;
             outputBox.Name = "outputBox";
@@ -646,12 +636,24 @@
             outputBox.TabIndex = 54;
             outputBox.TextAlign = HorizontalAlignment.Center;
             // 
+            // copyButton
+            // 
+            copyButton.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            copyButton.Location = new Point(534, 137);
+            copyButton.Name = "copyButton";
+            copyButton.Size = new Size(90, 23);
+            copyButton.TabIndex = 55;
+            copyButton.Text = "Use Output";
+            copyButton.UseVisualStyleBackColor = true;
+            copyButton.Click += copyButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(661, 340);
+            Controls.Add(copyButton);
             Controls.Add(outputBox);
             Controls.Add(supportButton);
             Controls.Add(decodeCheck);
@@ -662,7 +664,6 @@
             Controls.Add(label3);
             Controls.Add(inputBox);
             Controls.Add(makeGrid);
-            Controls.Add(useSymbols);
             Controls.Add(col5row4);
             Controls.Add(col6row4);
             Controls.Add(col1row5);
@@ -751,7 +752,6 @@
         private Label col1row5;
         private Label col6row4;
         private Label col5row4;
-        private CheckBox useSymbols;
         private Button makeGrid;
         private TextBox inputBox;
         private Label label3;
@@ -762,5 +762,6 @@
         private CheckBox decodeCheck;
         private Button supportButton;
         private TextBox outputBox;
+        private Button copyButton;
     }
 }
