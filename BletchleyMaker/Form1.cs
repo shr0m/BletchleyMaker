@@ -98,24 +98,6 @@ namespace BletchleyMaker
             outputBox.Text = "Error occured: " + errors[errorType];
         }
 
-        private void supportButton_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("This will take you to the Github page for this project.", "Support", MessageBoxButtons.OKCancel, MessageBoxIcon.None);
-
-            if (result == DialogResult.OK)
-            {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = "https://github.com/shr0m/BletchleyMaker",
-                    UseShellExecute = true
-                });
-            }
-            else
-            {
-                return;
-            }
-        }
-
         private void ruleBox_TextChanged(object sender, EventArgs e)
         {
             if (ruleBox.Text.ToUpper().Trim() == "X")
