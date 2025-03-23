@@ -8,6 +8,10 @@ A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The p
 
 ## Tool Use
 Upon downloading one of the two .exe files, you should be able to run them and use the tool.
+
+[For winx64](./BletchleyMaker_Winx64.exe)
+[For winx86](/BletchleyMaker_Winx86.exe)
+
 Basic guide:
 - Generate: Generates a new random 6x6 grid including letters A-Z and 0-9
 - Execute: Takes string from 'Text to Convert' and applies the reverse of the decode rule to encode
