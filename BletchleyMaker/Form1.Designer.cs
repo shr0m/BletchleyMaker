@@ -74,10 +74,20 @@
             execute = new Button();
             label4 = new Label();
             decodeCheck = new CheckBox();
-            supportButton = new Button();
             outputBox = new TextBox();
             copyButton = new Button();
+            label2 = new Label();
+            menuStrip1 = new MenuStrip();
+            supportToolStripMenuItem = new ToolStripMenuItem();
+            printToolStripMenuItem = new ToolStripMenuItem();
+            supportToolStripMenuItem1 = new ToolStripMenuItem();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // col1row1
@@ -549,7 +559,7 @@
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Control;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(350, 167);
+            label3.Location = new Point(349, 177);
             label3.Name = "label3";
             label3.Size = new Size(88, 16);
             label3.TabIndex = 46;
@@ -558,7 +568,7 @@
             // 
             // ruleBox
             // 
-            ruleBox.Location = new Point(350, 186);
+            ruleBox.Location = new Point(350, 196);
             ruleBox.Name = "ruleBox";
             ruleBox.Size = new Size(87, 23);
             ruleBox.TabIndex = 47;
@@ -591,9 +601,9 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = SystemColors.Control;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(350, 9);
+            label4.Location = new Point(367, 32);
             label4.Name = "label4";
             label4.Size = new Size(49, 16);
             label4.TabIndex = 51;
@@ -604,30 +614,19 @@
             // 
             decodeCheck.AutoSize = true;
             decodeCheck.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            decodeCheck.Location = new Point(456, 187);
+            decodeCheck.Location = new Point(456, 196);
             decodeCheck.Name = "decodeCheck";
             decodeCheck.Size = new Size(74, 20);
             decodeCheck.TabIndex = 52;
             decodeCheck.Text = "Decode";
             decodeCheck.UseVisualStyleBackColor = true;
             // 
-            // supportButton
-            // 
-            supportButton.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            supportButton.Location = new Point(12, 12);
-            supportButton.Name = "supportButton";
-            supportButton.Size = new Size(75, 23);
-            supportButton.TabIndex = 53;
-            supportButton.Text = "Support";
-            supportButton.UseVisualStyleBackColor = true;
-            supportButton.Click += supportButton_Click;
-            // 
             // outputBox
             // 
             outputBox.BackColor = Color.Gainsboro;
             outputBox.CharacterCasing = CharacterCasing.Upper;
             outputBox.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            outputBox.Location = new Point(367, 28);
+            outputBox.Location = new Point(367, 51);
             outputBox.MaxLength = 44;
             outputBox.Multiline = true;
             outputBox.Name = "outputBox";
@@ -639,7 +638,7 @@
             // copyButton
             // 
             copyButton.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            copyButton.Location = new Point(534, 137);
+            copyButton.Location = new Point(534, 160);
             copyButton.Name = "copyButton";
             copyButton.Size = new Size(90, 23);
             copyButton.TabIndex = 55;
@@ -647,15 +646,100 @@
             copyButton.UseVisualStyleBackColor = true;
             copyButton.Click += copyButton_Click;
             // 
+            // label2
+            // 
+            label2.BackColor = Color.Black;
+            label2.Location = new Point(320, 24);
+            label2.Name = "label2";
+            label2.Size = new Size(2, 350);
+            label2.TabIndex = 56;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = Color.Gainsboro;
+            menuStrip1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { supportToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(661, 24);
+            menuStrip1.TabIndex = 57;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // supportToolStripMenuItem
+            // 
+            supportToolStripMenuItem.BackColor = Color.Transparent;
+            supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { printToolStripMenuItem, supportToolStripMenuItem1 });
+            supportToolStripMenuItem.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            supportToolStripMenuItem.Name = "supportToolStripMenuItem";
+            supportToolStripMenuItem.Size = new Size(51, 20);
+            supportToolStripMenuItem.Text = "Menu";
+            // 
+            // printToolStripMenuItem
+            // 
+            printToolStripMenuItem.Name = "printToolStripMenuItem";
+            printToolStripMenuItem.Size = new Size(180, 22);
+            printToolStripMenuItem.Text = "Print";
+            // 
+            // supportToolStripMenuItem1
+            // 
+            supportToolStripMenuItem1.Name = "supportToolStripMenuItem1";
+            supportToolStripMenuItem1.Size = new Size(180, 22);
+            supportToolStripMenuItem1.Text = "Support";
+            // 
+            // label5
+            // 
+            label5.BackColor = Color.Black;
+            label5.Location = new Point(-7, 24);
+            label5.Name = "label5";
+            label5.Size = new Size(700, 2);
+            label5.TabIndex = 58;
+            // 
+            // label6
+            // 
+            label6.BackColor = Color.Black;
+            label6.Location = new Point(-20, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(700, 2);
+            label6.TabIndex = 59;
+            // 
+            // label7
+            // 
+            label7.BackColor = Color.Black;
+            label7.Location = new Point(659, -5);
+            label7.Name = "label7";
+            label7.Size = new Size(2, 350);
+            label7.TabIndex = 60;
+            // 
+            // label8
+            // 
+            label8.BackColor = Color.Black;
+            label8.Location = new Point(0, -5);
+            label8.Name = "label8";
+            label8.Size = new Size(2, 350);
+            label8.TabIndex = 61;
+            // 
+            // label9
+            // 
+            label9.BackColor = Color.Black;
+            label9.Location = new Point(-20, 338);
+            label9.Name = "label9";
+            label9.Size = new Size(700, 2);
+            label9.TabIndex = 62;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(661, 340);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label2);
             Controls.Add(copyButton);
             Controls.Add(outputBox);
-            Controls.Add(supportButton);
             Controls.Add(decodeCheck);
             Controls.Add(label4);
             Controls.Add(execute);
@@ -701,7 +785,9 @@
             Controls.Add(col5row1);
             Controls.Add(col1row1);
             Controls.Add(pictureBox1);
+            Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             Margin = new Padding(2, 1, 2, 1);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -709,6 +795,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BletchleyMaker";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -760,8 +848,17 @@
         private Button execute;
         private Label label4;
         private CheckBox decodeCheck;
-        private Button supportButton;
         private TextBox outputBox;
         private Button copyButton;
+        private Label label2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem supportToolStripMenuItem;
+        private ToolStripMenuItem printToolStripMenuItem;
+        private ToolStripMenuItem supportToolStripMenuItem1;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
     }
 }
