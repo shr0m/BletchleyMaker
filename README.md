@@ -1,10 +1,10 @@
-# BletchleyMaker (In Development)
+# BletchleyMaker
 A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The purpose of this tool is to encode sentences and create decode grids for the Air Cadet Bletchley Park cipher. This automates the process of making codes for Air Cadet activities.
 
 ## Features Available
 - Encoding plaintext sentences into Bletchley Park ciphertext
 - Generating a randomised decryption table (6x6 A-Z 0-9), includes symbols
-- Decoding input ciphertext (potential future feature)
+- Decoding input ciphertext
 
 ## Support
 Any issues can be reported in the issues tab of this repository. However, the developer may also be contacted through: jan.korzybski@proton.me
