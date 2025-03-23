@@ -121,6 +121,7 @@ namespace BletchleyMaker
             if (ruleBox.Text.ToUpper().Trim() == "X")
             {
                 decodeCheck.Visible = false;
+                decodeCheck.Checked = false;
             }
             else
             {
