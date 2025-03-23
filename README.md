@@ -15,7 +15,7 @@ Basic guide:
 - Use Output: Will copy text from output into 'Text to Convert'
 
 ## License
-See [LICENSE.md](./LICENSE.md) for information regarding license(s)
+See [LICENSE](./LICENSE) for information regarding license(s)
 
 ## Support
 Any issues can be reported in the issues tab of this repository. However, the developer may also be contacted through: jan.korzybski@proton.me
