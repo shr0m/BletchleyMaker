@@ -13,7 +13,7 @@ Upon downloading one of the two .exe files, you should be able to run them and u
 [For winx64](./BletchleyMaker_Winx64.exe)
 [For winx86](/BletchleyMaker_Winx86.exe)
 
-Basic guide:
+### Basic guide:
 - Generate: Generates a new random 6x6 grid including letters A-Z and 0-9
 - Execute: Takes string from 'Text to Convert' and applies the reverse of the decode rule to encode
 - Decode: If checked, will decode string from 'Text to Convert' with the decode rule as entered
