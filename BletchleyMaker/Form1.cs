@@ -4,6 +4,7 @@ using System.CodeDom.Compiler;
 using System.Reflection;
 using System.Windows.Forms.VisualStyles;
 using Microsoft.Win32.SafeHandles;
+using System.Drawing.Printing;
 
 namespace BletchleyMaker
 {
@@ -134,6 +135,26 @@ namespace BletchleyMaker
         private void copyButton_Click(object sender, EventArgs e)
         {
             inputBox.Text = outputBox.Text;
+        }
+
+        private void guideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://raf.mod.uk/aircadets/") { UseShellExecute = true });
+        }
+
+        private void errorReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://github.com/shr0m/BletchleyMaker/issues") { UseShellExecute = true });
+        }
+
+        private void feedbackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://github.com/shr0m/BletchleyMaker?tab=readme-ov-file#support") { UseShellExecute = true });
+        }
+        private void previewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PreviewForm previewForm = new PreviewForm(grid.GetGrid());
+            previewForm.ShowDialog();
         }
     }
 }
