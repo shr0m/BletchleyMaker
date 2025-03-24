@@ -1,5 +1,6 @@
 # BletchleyMaker
 ![Program Demo](./image.gif)
+
 A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The purpose of this tool is to encode sentences and create decode grids for the Air Cadet Bletchley Park cipher. This automates the process of making codes for Air Cadet activities.
 
 ## Features Available
