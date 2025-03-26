@@ -80,14 +80,11 @@
             supportToolStripMenuItem = new ToolStripMenuItem();
             printToolStripMenuItem = new ToolStripMenuItem();
             supportToolStripMenuItem1 = new ToolStripMenuItem();
-            printToolStripMenuItem1 = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             guideToolStripMenuItem = new ToolStripMenuItem();
             githubRepositoryToolStripMenuItem = new ToolStripMenuItem();
             errorReportToolStripMenuItem = new ToolStripMenuItem();
             feedbackToolStripMenuItem = new ToolStripMenuItem();
-            button1 = new Button();
-            previewToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -665,17 +662,17 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(11, 4, 0, 4);
-            menuStrip1.Size = new Size(1228, 46);
+            menuStrip1.Size = new Size(1228, 43);
             menuStrip1.TabIndex = 57;
             menuStrip1.Text = "menuStrip1";
             // 
             // supportToolStripMenuItem
             // 
             supportToolStripMenuItem.BackColor = Color.Transparent;
-            supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { printToolStripMenuItem, supportToolStripMenuItem1, printToolStripMenuItem1 });
+            supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { printToolStripMenuItem, supportToolStripMenuItem1 });
             supportToolStripMenuItem.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            supportToolStripMenuItem.Size = new Size(76, 38);
+            supportToolStripMenuItem.Size = new Size(76, 35);
             supportToolStripMenuItem.Text = "File";
             // 
             // printToolStripMenuItem
@@ -692,26 +689,18 @@
             supportToolStripMenuItem1.Size = new Size(359, 44);
             supportToolStripMenuItem1.Text = "Open";
             // 
-            // printToolStripMenuItem1
-            // 
-            printToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { previewToolStripMenuItem });
-            printToolStripMenuItem1.Image = Properties.Resources.printimg;
-            printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            printToolStripMenuItem1.Size = new Size(359, 44);
-            printToolStripMenuItem1.Text = "Print";
-            // 
             // helpToolStripMenuItem
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { guideToolStripMenuItem, githubRepositoryToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(82, 38);
+            helpToolStripMenuItem.Size = new Size(82, 35);
             helpToolStripMenuItem.Text = "Help";
             // 
             // guideToolStripMenuItem
             // 
             guideToolStripMenuItem.Image = Properties.Resources.rafacimg;
             guideToolStripMenuItem.Name = "guideToolStripMenuItem";
-            guideToolStripMenuItem.Size = new Size(359, 44);
+            guideToolStripMenuItem.Size = new Size(337, 44);
             guideToolStripMenuItem.Text = "About RAFAC";
             guideToolStripMenuItem.Click += guideToolStripMenuItem_Click;
             // 
@@ -720,40 +709,22 @@
             githubRepositoryToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { errorReportToolStripMenuItem, feedbackToolStripMenuItem });
             githubRepositoryToolStripMenuItem.Image = Properties.Resources.githubimg;
             githubRepositoryToolStripMenuItem.Name = "githubRepositoryToolStripMenuItem";
-            githubRepositoryToolStripMenuItem.Size = new Size(359, 44);
+            githubRepositoryToolStripMenuItem.Size = new Size(337, 44);
             githubRepositoryToolStripMenuItem.Text = "Github Repository";
             // 
             // errorReportToolStripMenuItem
             // 
             errorReportToolStripMenuItem.Name = "errorReportToolStripMenuItem";
-            errorReportToolStripMenuItem.Size = new Size(359, 44);
+            errorReportToolStripMenuItem.Size = new Size(275, 44);
             errorReportToolStripMenuItem.Text = "Error Report";
             errorReportToolStripMenuItem.Click += errorReportToolStripMenuItem_Click;
             // 
             // feedbackToolStripMenuItem
             // 
             feedbackToolStripMenuItem.Name = "feedbackToolStripMenuItem";
-            feedbackToolStripMenuItem.Size = new Size(359, 44);
+            feedbackToolStripMenuItem.Size = new Size(275, 44);
             feedbackToolStripMenuItem.Text = "Feedback";
             feedbackToolStripMenuItem.Click += feedbackToolStripMenuItem_Click;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(727, 336);
-            button1.Margin = new Padding(6);
-            button1.Name = "button1";
-            button1.Size = new Size(216, 42);
-            button1.TabIndex = 58;
-            button1.Text = "Add to Print File\r\n";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // previewToolStripMenuItem
-            // 
-            previewToolStripMenuItem.Name = "previewToolStripMenuItem";
-            previewToolStripMenuItem.Size = new Size(359, 44);
-            previewToolStripMenuItem.Text = "Preview";
-            previewToolStripMenuItem.Click += previewToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -761,7 +732,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1228, 725);
-            Controls.Add(button1);
             Controls.Add(copyButton);
             Controls.Add(outputBox);
             Controls.Add(decodeCheck);
@@ -878,13 +848,10 @@
         private ToolStripMenuItem supportToolStripMenuItem;
         private ToolStripMenuItem printToolStripMenuItem;
         private ToolStripMenuItem supportToolStripMenuItem1;
-        private ToolStripMenuItem printToolStripMenuItem1;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem guideToolStripMenuItem;
         private ToolStripMenuItem githubRepositoryToolStripMenuItem;
         private ToolStripMenuItem errorReportToolStripMenuItem;
         private ToolStripMenuItem feedbackToolStripMenuItem;
-        private ToolStripMenuItem previewToolStripMenuItem;
-        private Button button1;
     }
 }
