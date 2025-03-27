@@ -15,7 +15,7 @@ namespace BletchleyMaker
 
         public Cipher(string plain, string r)
         {
-            Text = plain;
+            Text = plain.Replace(" ", "");
             DecodeRule = r;
             string[] decodeRules = { "X", "U1", "D1", "L1", "R1", "U2", "U3", "U4", "U5", "L2", "L3", "L4", "L5", "D2", "D3", "D4", "D5", "R2", "R3", "R4", "R5" };
             string[] encodeRules = { "X", "D1", "U1", "R1", "L1", "D2", "D3", "D4", "D5", "R2", "R3", "R4", "R5", "U2", "U3", "U4", "U5", "L2", "L3", "L4", "L5" };
@@ -35,7 +35,6 @@ namespace BletchleyMaker
 
         public void Encode(char[,] gridArray)
         {
-            RemoveWhitespace();
             char ruleChoice = EncodeRule[0];
 
             switch (ruleChoice)
@@ -244,28 +243,13 @@ namespace BletchleyMaker
             Text = final;
         }
 
-        private void RemoveWhitespace()
-        {
-            string final = "";
-            foreach (char c in Text)
-            {
-                if (c != ' ')
-                {
-                    final += c;
-                }
-            }
-            Text = final;
-        }
-
         public string GetText()
         {
-            RemoveWhitespace();
             return Text;
         }
 
         public void Decode(char[,] gridArray)
         {
-            RemoveWhitespace();
             char ruleChoice = EncodeRule[0];
 
             switch (ruleChoice)

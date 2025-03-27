@@ -65,8 +65,14 @@ namespace BletchleyMaker
                 cipher.Encode(grid.GetGrid());
             }
 
-            outputBox.Text = cipher.GetText();
-            CleanUpText();
+            if (splitBox.Checked)
+            {
+                CleanUpText(cipher.GetText());
+            }
+            else
+            {
+                outputBox.Text = cipher.GetText();
+            }
         }
 
         private bool ValidateRule(string rule)
@@ -122,9 +128,9 @@ namespace BletchleyMaker
             }
         }
 
-        private void CleanUpText()
+        private void CleanUpText(string text)
         {
-            string process = outputBox.Text;
+            string process = text.Replace(" ", "");
             for (int i = 5; i < process.Length; i += 6)
             {
                 process = process.Insert(i, " ");
@@ -168,6 +174,27 @@ namespace BletchleyMaker
             List<char> list = open.GetList();
 
             grid.SetGrid(list.ToArray());
+        }
+
+        private void ruleBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                execute.PerformClick();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void splitBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (splitBox.Checked)
+            {
+                CleanUpText(outputBox.Text);
+            }
+            else
+            {
+                outputBox.Text = outputBox.Text.Replace(" ", "");
+            }
         }
     }
 }

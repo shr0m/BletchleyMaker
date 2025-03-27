@@ -86,6 +86,7 @@
             githubRepositoryToolStripMenuItem = new ToolStripMenuItem();
             errorReportToolStripMenuItem = new ToolStripMenuItem();
             feedbackToolStripMenuItem = new ToolStripMenuItem();
+            splitBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -576,6 +577,7 @@
             ruleBox.Size = new Size(158, 39);
             ruleBox.TabIndex = 47;
             ruleBox.TextChanged += ruleBox_TextChanged;
+            ruleBox.KeyDown += ruleBox_KeyDown;
             // 
             // label1
             // 
@@ -619,7 +621,7 @@
             // 
             decodeCheck.AutoSize = true;
             decodeCheck.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            decodeCheck.Location = new Point(879, 441);
+            decodeCheck.Location = new Point(832, 445);
             decodeCheck.Margin = new Padding(6);
             decodeCheck.Name = "decodeCheck";
             decodeCheck.Size = new Size(138, 34);
@@ -645,7 +647,7 @@
             // copyButton
             // 
             copyButton.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            copyButton.Location = new Point(972, 336);
+            copyButton.Location = new Point(989, 336);
             copyButton.Margin = new Padding(6);
             copyButton.Name = "copyButton";
             copyButton.Size = new Size(167, 42);
@@ -663,7 +665,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(11, 4, 0, 4);
-            menuStrip1.Size = new Size(1228, 46);
+            menuStrip1.Size = new Size(1228, 43);
             menuStrip1.TabIndex = 57;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -673,14 +675,14 @@
             supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { printToolStripMenuItem, supportToolStripMenuItem1, printToolStripMenuItem1 });
             supportToolStripMenuItem.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            supportToolStripMenuItem.Size = new Size(76, 38);
+            supportToolStripMenuItem.Size = new Size(76, 35);
             supportToolStripMenuItem.Text = "File";
             // 
             // printToolStripMenuItem
             // 
             printToolStripMenuItem.Image = Properties.Resources.saveimg;
             printToolStripMenuItem.Name = "printToolStripMenuItem";
-            printToolStripMenuItem.Size = new Size(359, 44);
+            printToolStripMenuItem.Size = new Size(210, 44);
             printToolStripMenuItem.Text = "Save";
             printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
@@ -688,7 +690,7 @@
             // 
             supportToolStripMenuItem1.Image = Properties.Resources.openimg;
             supportToolStripMenuItem1.Name = "supportToolStripMenuItem1";
-            supportToolStripMenuItem1.Size = new Size(359, 44);
+            supportToolStripMenuItem1.Size = new Size(210, 44);
             supportToolStripMenuItem1.Text = "Open";
             supportToolStripMenuItem1.Click += supportToolStripMenuItem1_Click;
             // 
@@ -696,7 +698,7 @@
             // 
             printToolStripMenuItem1.Image = Properties.Resources.printimg;
             printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            printToolStripMenuItem1.Size = new Size(359, 44);
+            printToolStripMenuItem1.Size = new Size(210, 44);
             printToolStripMenuItem1.Text = "Print";
             printToolStripMenuItem1.Click += printToolStripMenuItem1_Click;
             // 
@@ -704,7 +706,7 @@
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { guideToolStripMenuItem, githubRepositoryToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(82, 38);
+            helpToolStripMenuItem.Size = new Size(82, 35);
             helpToolStripMenuItem.Text = "Help";
             // 
             // guideToolStripMenuItem
@@ -737,12 +739,25 @@
             feedbackToolStripMenuItem.Text = "Feedback";
             feedbackToolStripMenuItem.Click += feedbackToolStripMenuItem_Click;
             // 
+            // splitBox
+            // 
+            splitBox.AutoSize = true;
+            splitBox.Font = new Font("Arial", 9.75F, FontStyle.Bold);
+            splitBox.Location = new Point(989, 445);
+            splitBox.Name = "splitBox";
+            splitBox.Size = new Size(161, 34);
+            splitBox.TabIndex = 58;
+            splitBox.Text = "Split Text";
+            splitBox.UseVisualStyleBackColor = true;
+            splitBox.CheckedChanged += splitBox_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1228, 725);
+            Controls.Add(splitBox);
             Controls.Add(copyButton);
             Controls.Add(outputBox);
             Controls.Add(decodeCheck);
@@ -795,7 +810,6 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 2, 4, 2);
             MaximizeBox = false;
-            MinimizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BletchleyMaker";
@@ -865,5 +879,6 @@
         private ToolStripMenuItem errorReportToolStripMenuItem;
         private ToolStripMenuItem feedbackToolStripMenuItem;
         private ToolStripMenuItem printToolStripMenuItem1;
+        private CheckBox splitBox;
     }
 }
