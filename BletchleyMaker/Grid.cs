@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -77,6 +78,40 @@ namespace BletchleyMaker
                 }
             }
             return true;
+        }
+
+        public void SetGrid(char[] chars)
+        {
+            List<char> newChars = CheckChars(chars);
+            for (int i = 0; i < 36; i++)
+            {
+                try
+                {
+                    components[i].Text = newChars[i].ToString();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("File does not fit format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Generate();
+                    return;
+                }
+            }
+            MessageBox.Show("Grid set successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private List<char> CheckChars(char[] chars)
+        {
+            List<char> final = chars.ToList();
+            for (int i = 0; i < final.Count; i++)
+            {
+                if (final[i] == ' ')
+                {
+                    final.RemoveAt(i);
+                    i--;
+                }
+            }
+
+            return final;
         }
     }
 }

@@ -80,6 +80,7 @@
             supportToolStripMenuItem = new ToolStripMenuItem();
             printToolStripMenuItem = new ToolStripMenuItem();
             supportToolStripMenuItem1 = new ToolStripMenuItem();
+            printToolStripMenuItem1 = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             guideToolStripMenuItem = new ToolStripMenuItem();
             githubRepositoryToolStripMenuItem = new ToolStripMenuItem();
@@ -662,17 +663,17 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(11, 4, 0, 4);
-            menuStrip1.Size = new Size(1228, 43);
+            menuStrip1.Size = new Size(1228, 46);
             menuStrip1.TabIndex = 57;
             menuStrip1.Text = "menuStrip1";
             // 
             // supportToolStripMenuItem
             // 
             supportToolStripMenuItem.BackColor = Color.Transparent;
-            supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { printToolStripMenuItem, supportToolStripMenuItem1 });
+            supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { printToolStripMenuItem, supportToolStripMenuItem1, printToolStripMenuItem1 });
             supportToolStripMenuItem.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            supportToolStripMenuItem.Size = new Size(76, 35);
+            supportToolStripMenuItem.Size = new Size(76, 38);
             supportToolStripMenuItem.Text = "File";
             // 
             // printToolStripMenuItem
@@ -681,6 +682,7 @@
             printToolStripMenuItem.Name = "printToolStripMenuItem";
             printToolStripMenuItem.Size = new Size(359, 44);
             printToolStripMenuItem.Text = "Save";
+            printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
             // supportToolStripMenuItem1
             // 
@@ -688,12 +690,21 @@
             supportToolStripMenuItem1.Name = "supportToolStripMenuItem1";
             supportToolStripMenuItem1.Size = new Size(359, 44);
             supportToolStripMenuItem1.Text = "Open";
+            supportToolStripMenuItem1.Click += supportToolStripMenuItem1_Click;
+            // 
+            // printToolStripMenuItem1
+            // 
+            printToolStripMenuItem1.Image = Properties.Resources.printimg;
+            printToolStripMenuItem1.Name = "printToolStripMenuItem1";
+            printToolStripMenuItem1.Size = new Size(359, 44);
+            printToolStripMenuItem1.Text = "Print";
+            printToolStripMenuItem1.Click += printToolStripMenuItem1_Click;
             // 
             // helpToolStripMenuItem
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { guideToolStripMenuItem, githubRepositoryToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(82, 35);
+            helpToolStripMenuItem.Size = new Size(82, 38);
             helpToolStripMenuItem.Text = "Help";
             // 
             // guideToolStripMenuItem
@@ -853,5 +864,6 @@
         private ToolStripMenuItem githubRepositoryToolStripMenuItem;
         private ToolStripMenuItem errorReportToolStripMenuItem;
         private ToolStripMenuItem feedbackToolStripMenuItem;
+        private ToolStripMenuItem printToolStripMenuItem1;
     }
 }

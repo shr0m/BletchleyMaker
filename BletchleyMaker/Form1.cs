@@ -152,5 +152,22 @@ namespace BletchleyMaker
         {
             Process.Start(new ProcessStartInfo("https://github.com/shr0m/BletchleyMaker?tab=readme-ov-file#support") { UseShellExecute = true });
         }
+
+        private void printToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Print print = new Print(grid.GetGrid());
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Save save = new Save(grid.GetGrid());
+        }
+        private void supportToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Open open = new Open();
+            List<char> list = open.GetList();
+
+            grid.SetGrid(list.ToArray());
+        }
     }
 }
