@@ -96,7 +96,7 @@ namespace BletchleyMaker
                     return;
                 }
             }
-            MessageBox.Show("Grid set successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Grid set successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
 
         private List<char> CheckChars(char[] chars)
