@@ -642,7 +642,7 @@
             copyButton.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             copyButton.Location = new Point(533, 158);
             copyButton.Name = "copyButton";
-            copyButton.Size = new Size(90, 20);
+            copyButton.Size = new Size(90, 25);
             copyButton.TabIndex = 55;
             copyButton.Text = "Use Output";
             copyButton.UseVisualStyleBackColor = true;
