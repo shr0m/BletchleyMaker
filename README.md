@@ -7,6 +7,7 @@ A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The p
 - Encoding plaintext sentences into Bletchley Park ciphertext
 - Generating a randomised decryption table (6x6 A-Z 0-9)
 - Decoding input ciphertext
+- Saving, opening and printing grids (Printing ONLY works in A4)
 
 ## Tool Use
 Upon downloading one of the two .exe files, you should be able to run them and use the tool.
