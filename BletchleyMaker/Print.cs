@@ -50,26 +50,37 @@ namespace BletchleyMaker
         }
         private void DrawGrid(Graphics g, int xOffset, int yOffset)
         {
-            int cellWidth = 50;
-            int cellHeight = 50;
+            int cellWidth = 125;
+            int cellHeight = 125;
             int rows = 6;
             int columns = 6;
 
-            Pen pen = new Pen(Color.Black, 2);
 
             for (int col = 0; col <= columns; col++)
             {
-                int x = xOffset + col * cellWidth;
+                Pen pen = new Pen(Color.Black, 2);
+
+                if (col == 0 || col == 3 || col == 6)
+                {
+                    pen = new Pen(Color.Black, 6);
+                }
+                    int x = xOffset + col * cellWidth;
                 g.DrawLine(pen, x, yOffset, x, yOffset + rows * cellHeight);
             }
 
             for (int row = 0; row <= rows; row++)
             {
+                Pen pen = new Pen(Color.Black, 2);
+
+                if (row == 0 || row == 3 || row == 6)
+                {
+                    pen = new Pen(Color.Black, 6);
+                }
                 int y = yOffset + row * cellHeight;
                 g.DrawLine(pen, xOffset, y, xOffset + columns * cellWidth, y);
             }
 
-            Font font = new Font("Arial", 12);
+            Font font = new Font("Arial", 24);
             SolidBrush brush = new SolidBrush(Color.Black);
 
             for (int row = 0; row < rows; row++)
