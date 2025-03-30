@@ -208,7 +208,7 @@ namespace BletchleyMaker
                 {
                     if (!splitBox.Checked)
                     {
-                        CleanUpText(outputBox.Text);   
+                        CleanUpText(outputBox.Text);
                     }
                     savedCodes.Add(ruleBox.Text.ToUpper() + "   " + outputBox.Text);
                     MessageBox.Show("Code added", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
@@ -243,6 +243,11 @@ namespace BletchleyMaker
         public void RemoveCode(int code)
         {
             savedCodes.RemoveAt(code);
+        }
+
+        private async void Form1_Load(object sender, EventArgs e)
+        {
+            await UpdateChecker.CheckForUpdate();
         }
     }
 }
