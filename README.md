@@ -12,13 +12,21 @@ A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The p
 - Saving, opening and printing grids (Printing ONLY works in A4)
 
 ## Tool Use
-Upon downloading one of the two .exe files, you should be able to run them and use the tool.
+To install the application, download the ZIP file [here](https://github.com/shr0m/BletchleyMaker/releases/tag/v2.0.0.0). The application uses ClickOnce to install onto the machine.
 
 ### Basic guide:
 - Generate: Generates a new random 6x6 grid including letters A-Z and 0-9
 - Execute: Takes string from 'Text to Convert' and applies the reverse of the decode rule to encode
 - Decode: If checked, will decode string from 'Text to Convert' with the decode rule as entered
-- Use Output: Will copy text from output into 'Text to Convert'
+- Split Text: Will split the output into groups of 5 to align with cipher rules
+- Convert Output: Will copy text from output into 'Text to Convert'
+- Add to Print: Will add the code in Output to print with the grid
+- View Print Codes: Will show the list of codes which are saved to print with the grid (maximum 10). You may clear the print save or remove elements should you wish
+
+### To use your own grid:
+1. Save a string of 36 characters, A-Z 0-9. Ensure no characters repeat.
+2. Base64 encode the string and save to a txt file.
+3. Open the txt file with the application.
 
 ## License
 See [LICENSE](./LICENSE) for information regarding license(s)
