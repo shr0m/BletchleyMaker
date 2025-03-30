@@ -87,6 +87,8 @@
             errorReportToolStripMenuItem = new ToolStripMenuItem();
             feedbackToolStripMenuItem = new ToolStripMenuItem();
             splitBox = new CheckBox();
+            addCode = new Button();
+            viewCodes = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -549,7 +551,7 @@
             // 
             // inputBox
             // 
-            inputBox.Location = new Point(350, 247);
+            inputBox.Location = new Point(349, 262);
             inputBox.Name = "inputBox";
             inputBox.Size = new Size(284, 23);
             inputBox.TabIndex = 44;
@@ -560,7 +562,7 @@
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Control;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(349, 184);
+            label3.Location = new Point(348, 193);
             label3.Name = "label3";
             label3.Size = new Size(88, 16);
             label3.TabIndex = 46;
@@ -569,7 +571,7 @@
             // 
             // ruleBox
             // 
-            ruleBox.Location = new Point(349, 201);
+            ruleBox.Location = new Point(349, 212);
             ruleBox.Name = "ruleBox";
             ruleBox.Size = new Size(87, 23);
             ruleBox.TabIndex = 47;
@@ -581,7 +583,7 @@
             label1.AutoSize = true;
             label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(350, 228);
+            label1.Location = new Point(349, 243);
             label1.Name = "label1";
             label1.Size = new Size(103, 16);
             label1.TabIndex = 48;
@@ -605,7 +607,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(367, 32);
+            label4.Location = new Point(325, 32);
             label4.Name = "label4";
             label4.Size = new Size(49, 16);
             label4.TabIndex = 51;
@@ -616,7 +618,7 @@
             // 
             decodeCheck.AutoSize = true;
             decodeCheck.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            decodeCheck.Location = new Point(448, 202);
+            decodeCheck.Location = new Point(448, 212);
             decodeCheck.Name = "decodeCheck";
             decodeCheck.Size = new Size(74, 20);
             decodeCheck.TabIndex = 52;
@@ -628,23 +630,23 @@
             outputBox.BackColor = Color.Gainsboro;
             outputBox.CharacterCasing = CharacterCasing.Upper;
             outputBox.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            outputBox.Location = new Point(367, 51);
+            outputBox.Location = new Point(325, 51);
             outputBox.MaxLength = 44;
             outputBox.Multiline = true;
             outputBox.Name = "outputBox";
             outputBox.ReadOnly = true;
-            outputBox.Size = new Size(257, 103);
+            outputBox.Size = new Size(324, 103);
             outputBox.TabIndex = 54;
             outputBox.TextAlign = HorizontalAlignment.Center;
             // 
             // copyButton
             // 
             copyButton.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            copyButton.Location = new Point(533, 158);
+            copyButton.Location = new Point(325, 158);
             copyButton.Name = "copyButton";
-            copyButton.Size = new Size(90, 25);
+            copyButton.Size = new Size(101, 25);
             copyButton.TabIndex = 55;
-            copyButton.Text = "Use Output";
+            copyButton.Text = "Convert Output";
             copyButton.UseVisualStyleBackColor = true;
             copyButton.Click += copyButton_Click;
             // 
@@ -734,7 +736,7 @@
             // 
             splitBox.AutoSize = true;
             splitBox.Font = new Font("Arial", 9.75F, FontStyle.Bold);
-            splitBox.Location = new Point(533, 202);
+            splitBox.Location = new Point(527, 212);
             splitBox.Margin = new Padding(2, 1, 2, 1);
             splitBox.Name = "splitBox";
             splitBox.Size = new Size(86, 20);
@@ -743,12 +745,36 @@
             splitBox.UseVisualStyleBackColor = true;
             splitBox.CheckedChanged += splitBox_CheckedChanged;
             // 
+            // addCode
+            // 
+            addCode.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addCode.Location = new Point(432, 158);
+            addCode.Name = "addCode";
+            addCode.Size = new Size(90, 25);
+            addCode.TabIndex = 59;
+            addCode.Text = "Add to Print";
+            addCode.UseVisualStyleBackColor = true;
+            addCode.Click += addCode_Click;
+            // 
+            // viewCodes
+            // 
+            viewCodes.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            viewCodes.Location = new Point(527, 158);
+            viewCodes.Name = "viewCodes";
+            viewCodes.Size = new Size(117, 25);
+            viewCodes.TabIndex = 60;
+            viewCodes.Text = "View Print Codes";
+            viewCodes.UseVisualStyleBackColor = true;
+            viewCodes.Click += viewCodes_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(661, 340);
+            Controls.Add(viewCodes);
+            Controls.Add(addCode);
             Controls.Add(splitBox);
             Controls.Add(copyButton);
             Controls.Add(outputBox);
@@ -872,5 +898,7 @@
         private ToolStripMenuItem feedbackToolStripMenuItem;
         private ToolStripMenuItem printToolStripMenuItem1;
         private CheckBox splitBox;
+        private Button addCode;
+        public Button viewCodes;
     }
 }

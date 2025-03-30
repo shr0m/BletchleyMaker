@@ -1,23 +1,18 @@
 using System.Diagnostics;
-using System.CodeDom;
-using System.CodeDom.Compiler;
-using System.Reflection;
-using System.Windows.Forms.VisualStyles;
-using Microsoft.Win32.SafeHandles;
-using System.Drawing.Printing;
 
 namespace BletchleyMaker
 {
     public partial class Form1 : Form
     {
         internal Grid grid;
-        public List<Label> componentArray;
-        public List<string> addCodes;
+        private List<Label> componentArray;
+        private List<string> savedCodes;
+        private ViewCodes view = null!;
 
         public Form1()
         {
             InitializeComponent();
-            addCodes = new List<string>();
+            savedCodes = new List<string>();
             componentArray = new List<Label> { col1row1, col2row1, col3row1, col4row1, col5row1, col6row1, col1row2, col2row2, col3row2, col4row2, col5row2, col6row2, col1row3, col2row3, col3row3, col4row3, col5row3, col6row3, col1row4, col2row4, col3row4, col4row4, col5row4, col6row4, col1row5, col2row5, col3row5, col4row5, col5row5, col6row5, col1row6, col2row6, col3row6, col4row6, col5row6, col6row6 };
             grid = new Grid(componentArray);
 
@@ -36,8 +31,21 @@ namespace BletchleyMaker
                     return;
                 }
             }
+            else if (savedCodes.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Generating a new grid will clear all saved codes. Continue?", "You have saved codes", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                savedCodes.Clear();
+            }
             grid.Generate();
             execute.PerformClick();
+            savedCodes.Clear();
+
+            // Go through savedcodes and change them, will only clear for now
+
         }
 
         private void execute_Click(object sender, EventArgs e)
@@ -52,7 +60,7 @@ namespace BletchleyMaker
 
             if (!(grid.ValidateCharacterSet(cipher.GetText())))
             {
-                ThrowError(1);
+                MessageBox.Show("An unknown character is present, please only use A-Z and 0-9", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
 
@@ -93,17 +101,10 @@ namespace BletchleyMaker
             }
             if (!valid)
             {
-                ThrowError(0);
+                MessageBox.Show("Invalid rule", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             return valid;
 
-        }
-
-        public void ThrowError(int errorType)
-        {
-            string[] errors = { "INCORRECT RULE", "UNKNOWN CHARACTER" };
-
-            outputBox.Text = "Error occured: " + errors[errorType];
         }
 
         private void ruleBox_TextChanged(object sender, EventArgs e)
@@ -161,7 +162,7 @@ namespace BletchleyMaker
 
         private void printToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Print print = new Print(grid.GetGrid());
+            Print print = new Print(grid.GetGrid(), savedCodes);
         }
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
@@ -195,6 +196,53 @@ namespace BletchleyMaker
             {
                 outputBox.Text = outputBox.Text.Replace(" ", "");
             }
+        }
+
+        private void addCode_Click(object sender, EventArgs e)
+        {
+            decodeCheck.Checked = false;
+            execute.PerformClick();
+            if (savedCodes.Count != 10)
+            {
+                if (outputBox.Text.Replace(" ", "") != "")
+                {
+                    if (!splitBox.Checked)
+                    {
+                        CleanUpText(outputBox.Text);   
+                    }
+                    savedCodes.Add(ruleBox.Text.ToUpper() + "   " + outputBox.Text);
+                    MessageBox.Show("Code added", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("You can't add an empty code", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("You can only store 10 codes at a time", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
+                return;
+            }
+        }
+
+        private void viewCodes_Click(object sender, EventArgs e)
+        {
+            if (view == null || view.IsDisposed)
+            {
+                view = new ViewCodes(savedCodes, this);
+                view.Show();
+            }
+            else
+            {
+                view.BringToFront();
+            }
+        }
+
+        public void RemoveCode(int code)
+        {
+            savedCodes.RemoveAt(code);
         }
     }
 }
