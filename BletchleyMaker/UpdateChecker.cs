@@ -8,7 +8,7 @@ namespace BletchleyMaker
 {
     internal class UpdateChecker
     {
-        private const string UpdateJsonUrl = "https://github.com/shr0m/BletchleyMaker/blob/master/version.json";
+        private const string UpdateJsonUrl = "https://raw.githubusercontent.com/shr0m/BletchleyMaker/refs/heads/master/version.json";
 
         public static async Task CheckForUpdate()
         {
