@@ -44,9 +44,6 @@ namespace BletchleyMaker
             grid.Generate();
             execute.PerformClick();
             savedCodes.Clear();
-
-            // Go through savedcodes and change them, will only clear for now
-
         }
 
         private void execute_Click(object sender, EventArgs e)
@@ -183,10 +180,10 @@ namespace BletchleyMaker
 
         private void addCode_Click(object sender, EventArgs e)
         {
-            decodeCheck.Checked = false;
-            execute.PerformClick();
             if (savedCodes.Count != 10)
             {
+                decodeCheck.Checked = false;
+                execute.PerformClick();
                 if (outputBox.Text.Replace(" ", "") != "")
                 {
                     if (!splitBox.Checked)
@@ -205,9 +202,10 @@ namespace BletchleyMaker
             }
             else
             {
-                MessageBox.Show("You can only store 10 codes at a time", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("You can't add more than 10 codes", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
+            
         }
 
         private void viewCodes_Click(object sender, EventArgs e)
