@@ -78,6 +78,9 @@
             copyButton = new Button();
             menuStrip1 = new MenuStrip();
             supportToolStripMenuItem = new ToolStripMenuItem();
+            newGridToolStripMenuItem = new ToolStripMenuItem();
+            manualAddToolStripMenuItem = new ToolStripMenuItem();
+            generateToolStripMenuItem = new ToolStripMenuItem();
             printToolStripMenuItem = new ToolStripMenuItem();
             supportToolStripMenuItem1 = new ToolStripMenuItem();
             printToolStripMenuItem1 = new ToolStripMenuItem();
@@ -555,7 +558,6 @@
             inputBox.Name = "inputBox";
             inputBox.Size = new Size(284, 23);
             inputBox.TabIndex = 44;
-            inputBox.KeyDown += inputBox_KeyDown;
             // 
             // label3
             // 
@@ -576,7 +578,6 @@
             ruleBox.Size = new Size(87, 23);
             ruleBox.TabIndex = 47;
             ruleBox.TextChanged += ruleBox_TextChanged;
-            ruleBox.KeyDown += ruleBox_KeyDown;
             // 
             // label1
             // 
@@ -665,17 +666,39 @@
             // supportToolStripMenuItem
             // 
             supportToolStripMenuItem.BackColor = Color.Transparent;
-            supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { printToolStripMenuItem, supportToolStripMenuItem1, printToolStripMenuItem1 });
+            supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newGridToolStripMenuItem, printToolStripMenuItem, supportToolStripMenuItem1, printToolStripMenuItem1 });
             supportToolStripMenuItem.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             supportToolStripMenuItem.Name = "supportToolStripMenuItem";
             supportToolStripMenuItem.Size = new Size(40, 20);
             supportToolStripMenuItem.Text = "File";
             // 
+            // newGridToolStripMenuItem
+            // 
+            newGridToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manualAddToolStripMenuItem, generateToolStripMenuItem });
+            newGridToolStripMenuItem.Image = Properties.Resources.addition;
+            newGridToolStripMenuItem.Name = "newGridToolStripMenuItem";
+            newGridToolStripMenuItem.Size = new Size(127, 22);
+            newGridToolStripMenuItem.Text = "New Grid";
+            // 
+            // manualAddToolStripMenuItem
+            // 
+            manualAddToolStripMenuItem.Name = "manualAddToolStripMenuItem";
+            manualAddToolStripMenuItem.Size = new Size(142, 22);
+            manualAddToolStripMenuItem.Text = "Manual Add";
+            manualAddToolStripMenuItem.Click += manualAddToolStripMenuItem_Click;
+            // 
+            // generateToolStripMenuItem
+            // 
+            generateToolStripMenuItem.Name = "generateToolStripMenuItem";
+            generateToolStripMenuItem.Size = new Size(142, 22);
+            generateToolStripMenuItem.Text = "Generate";
+            generateToolStripMenuItem.Click += generateToolStripMenuItem_Click;
+            // 
             // printToolStripMenuItem
             // 
             printToolStripMenuItem.Image = Properties.Resources.saveimg;
             printToolStripMenuItem.Name = "printToolStripMenuItem";
-            printToolStripMenuItem.Size = new Size(105, 22);
+            printToolStripMenuItem.Size = new Size(127, 22);
             printToolStripMenuItem.Text = "Save";
             printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
@@ -683,7 +706,7 @@
             // 
             supportToolStripMenuItem1.Image = Properties.Resources.openimg;
             supportToolStripMenuItem1.Name = "supportToolStripMenuItem1";
-            supportToolStripMenuItem1.Size = new Size(105, 22);
+            supportToolStripMenuItem1.Size = new Size(127, 22);
             supportToolStripMenuItem1.Text = "Open";
             supportToolStripMenuItem1.Click += supportToolStripMenuItem1_Click;
             // 
@@ -691,7 +714,7 @@
             // 
             printToolStripMenuItem1.Image = Properties.Resources.printimg;
             printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            printToolStripMenuItem1.Size = new Size(105, 22);
+            printToolStripMenuItem1.Size = new Size(127, 22);
             printToolStripMenuItem1.Text = "Print";
             printToolStripMenuItem1.Click += printToolStripMenuItem1_Click;
             // 
@@ -901,5 +924,8 @@
         private CheckBox splitBox;
         private Button addCode;
         public Button viewCodes;
+        private ToolStripMenuItem newGridToolStripMenuItem;
+        private ToolStripMenuItem manualAddToolStripMenuItem;
+        private ToolStripMenuItem generateToolStripMenuItem;
     }
 }

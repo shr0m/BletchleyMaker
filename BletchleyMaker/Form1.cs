@@ -12,6 +12,7 @@ namespace BletchleyMaker
         public Form1()
         {
             InitializeComponent();
+            this.AcceptButton = execute;
             savedCodes = new List<string>();
             componentArray = new List<Label> { col1row1, col2row1, col3row1, col4row1, col5row1, col6row1, col1row2, col2row2, col3row2, col4row2, col5row2, col6row2, col1row3, col2row3, col3row3, col4row3, col5row3, col6row3, col1row4, col2row4, col3row4, col4row4, col5row4, col6row4, col1row5, col2row5, col3row5, col4row5, col5row5, col6row5, col1row6, col2row6, col3row6, col4row6, col5row6, col6row6 };
             grid = new Grid(componentArray);
@@ -120,15 +121,6 @@ namespace BletchleyMaker
             }
         }
 
-        private void inputBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                execute.PerformClick();
-                e.SuppressKeyPress = true;
-            }
-        }
-
         private void CleanUpText(string text)
         {
             string process = text.Replace(" ", "");
@@ -175,15 +167,6 @@ namespace BletchleyMaker
             List<char> list = open.GetList();
 
             grid.SetGrid(list.ToArray());
-        }
-
-        private void ruleBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                execute.PerformClick();
-                e.SuppressKeyPress = true;
-            }
         }
 
         private void splitBox_CheckedChanged(object sender, EventArgs e)
@@ -248,6 +231,24 @@ namespace BletchleyMaker
         private async void Form1_Load(object sender, EventArgs e)
         {
             await UpdateChecker.CheckForUpdate();
+        }
+
+        private void generateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            makeGrid.PerformClick();
+        }
+
+        private void manualAddToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewGrid newGrid = new NewGrid();
+
+            if (newGrid.ShowDialog() == DialogResult.OK)
+            {
+                List<char> list = newGrid.GetList();
+                grid.SetGrid(list.ToArray());
+            }
+
+            newGrid.Dispose();
         }
     }
 }
