@@ -33,10 +33,11 @@ namespace BletchleyMaker
             for (int i = 0; i < compArray.Length; i++)
             {
                 compArray[i].Tag = i;
-                compArray[i].MaxLength = 1; // Ensure only 1 char per box
+                compArray[i].MaxLength = 1;
 
                 compArray[i].TextChanged += AutoAdvance!;
-                compArray[i].KeyDown += MoveWithArrows!; // from earlier
+                compArray[i].KeyDown += MoveWithArrows!;
+                compArray[i].KeyDown += HandleBackspace;
             }
         }
 
@@ -135,6 +136,27 @@ namespace BletchleyMaker
                 {
                     current.Clear();
                 }
+            }
+        }
+        private void HandleBackspace(object sender, KeyEventArgs e)
+        {
+            TextBox? current = sender as TextBox;
+            int index = (int)current!.Tag!;
+
+            if (e.KeyCode == Keys.Back)
+            {
+                if (!string.IsNullOrEmpty(current.Text))
+                {
+                    current.Clear();
+                }
+                else if (index > 0)
+                {
+                    compArray[index - 1].Focus();
+                    compArray[index - 1].Clear();
+                }
+
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
     }
