@@ -8,12 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>magnify.ico</ApplicationIcon>
     <FileVersion>1.0.0.0</FileVersion>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <AssemblyVersion>2.1.0.1</AssemblyVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="magnify.ico" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
