@@ -1,8 +1,6 @@
 # BletchleyMaker
 ![Program Demo](./image.gif)
 
-### As this application is not CA signed, a security warning may appear. All code within the application exists within this repository.
-
 A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The purpose of this tool is to encode sentences and create decode grids for the Air Cadet Bletchley Park cipher. This automates the process of making codes for Air Cadet activities.
 
 ## Features Available
@@ -12,7 +10,7 @@ A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The p
 - Saving, opening and printing grids (Printing ONLY works in A4)
 
 ## Tool Use
-To install the application, download the ZIP file [here](https://github.com/shr0m/BletchleyMaker/releases/tag/v2.0.0.0). The application uses ClickOnce to install onto the machine.
+To install the application, download the MSI file [here](https://github.com/shr0m/BletchleyMaker/releases/tag/v2.1.0.0).
 
 ### Basic guide:
 - Generate: Generates a new random 6x6 grid including letters A-Z and 0-9
@@ -22,11 +20,7 @@ To install the application, download the ZIP file [here](https://github.com/shr0
 - Convert Output: Will copy text from output into 'Text to Convert'
 - Add to Print: Will add the code in Output to print with the grid
 - View Print Codes: Will show the list of codes which are saved to print with the grid (maximum 10). You may clear the print save or remove elements should you wish
-
-### To use your own grid:
-1. Save a string of 36 characters, A-Z 0-9. Ensure no characters repeat.
-2. Base64 encode the string and save to a txt file.
-3. Open the txt file with the application.
+- Menu: Provides additional functionality, such as printing, reporting errors, and creating own grids
 
 ## License
 See [LICENSE](./LICENSE) for information regarding license(s)
