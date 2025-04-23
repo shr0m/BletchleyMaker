@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Ignore BletchleyMaker_Installer
+BletchleyMaker_Installer/
+
 # Ignore version.json
 version.json
 
