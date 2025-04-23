@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BletchleyMaker
+namespace BletchleyMaker.Functions
 {
     internal class Grid
     {

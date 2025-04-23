@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BletchleyMaker
+namespace BletchleyMaker.Functions
 {
     internal class Print
     {
@@ -121,7 +121,7 @@ namespace BletchleyMaker
             SolidBrush brush = new SolidBrush(Color.Black);
 
             // Set a vertical offset to place the codes below the grid
-            int verticalOffset = yOffset + (6 * 100) + 20;  // Add 20 for spacing after the grid
+            int verticalOffset = yOffset + 6 * 100 + 20;  // Add 20 for spacing after the grid
 
             // Loop through the codes array and draw each string below the grid
             for (int i = 0; i < codes.Length; i++)
@@ -133,7 +133,7 @@ namespace BletchleyMaker
                 float x = (g.VisibleClipBounds.Width - textSize.Width) / 2;  // Center horizontally
 
                 // Calculate the vertical position for each code, with added spacing (e.g., 25px between each code)
-                float y = verticalOffset + (i * 30);  // 30px space between codes
+                float y = verticalOffset + i * 30;  // 30px space between codes
 
                 // Draw the code string
                 g.DrawString(code, codeFont, brush, x, y);

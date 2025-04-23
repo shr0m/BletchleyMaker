@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
-namespace BletchleyMaker
+namespace BletchleyMaker.Functions
 {
     internal class UpdateChecker
     {
@@ -39,7 +39,8 @@ namespace BletchleyMaker
         {
             DialogResult result = MessageBox.Show("A new version is available! Would you like to update?", "Update Available", MessageBoxButtons.YesNo);
 
-            if (result == DialogResult.Yes) {
+            if (result == DialogResult.Yes)
+            {
                 Process.Start(new ProcessStartInfo(json["downloadUrl"]!.ToString()) { UseShellExecute = true });
             }
             else
