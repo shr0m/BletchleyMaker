@@ -5,8 +5,6 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BletchleyMaker", "BletchleyMaker\BletchleyMaker.csproj", "{4289B5AA-4521-4410-A8E4-D58EE0A8F489}"
 EndProject
-Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "BletchleyMaker_Installer", "BletchleyMaker_Installer\BletchleyMaker_Installer.wixproj", "{A608E6E3-C9D8-4EEC-A5CC-4516767A50D1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,12 +21,6 @@ Global
 		{4289B5AA-4521-4410-A8E4-D58EE0A8F489}.Release|x64.Build.0 = Release|Any CPU
 		{4289B5AA-4521-4410-A8E4-D58EE0A8F489}.Release|x86.ActiveCfg = Release|Any CPU
 		{4289B5AA-4521-4410-A8E4-D58EE0A8F489}.Release|x86.Build.0 = Release|Any CPU
-		{A608E6E3-C9D8-4EEC-A5CC-4516767A50D1}.Debug|x64.ActiveCfg = Debug|x64
-		{A608E6E3-C9D8-4EEC-A5CC-4516767A50D1}.Debug|x86.ActiveCfg = Debug|x86
-		{A608E6E3-C9D8-4EEC-A5CC-4516767A50D1}.Release|x64.ActiveCfg = Release|x86
-		{A608E6E3-C9D8-4EEC-A5CC-4516767A50D1}.Release|x64.Build.0 = Release|x86
-		{A608E6E3-C9D8-4EEC-A5CC-4516767A50D1}.Release|x86.ActiveCfg = Release|x86
-		{A608E6E3-C9D8-4EEC-A5CC-4516767A50D1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
