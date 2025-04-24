@@ -44,7 +44,11 @@ namespace BletchleyMaker.Functions
             }
             for (int i = 0; i < components.Count; i++)
             {
-                components[i].Text = gridArr[i].ToString();
+                if (gridArr[i] != '&')
+                { components[i].Text = gridArr[i].ToString(); }
+                else
+                { components[i].Text = "&&"; }
+                
             }
             Main.SetChars(new List<char>(Chars)); // optional: pass original list back to Main
         }
