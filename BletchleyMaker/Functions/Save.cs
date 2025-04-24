@@ -10,25 +10,24 @@ namespace BletchleyMaker.Functions
     internal class Save
     {
         private char[,] grid;
+        private List<string> savedCodes;
 
-        public Save(char[,] saveGrid)
+        public Save(char[,] saveGrid, List<string> savedCodes)
         {
             grid = saveGrid;
+            this.savedCodes = savedCodes;
+
             SaveFileDialog saveFile = new SaveFileDialog
             {
                 Filter = "BletchleyMaker Grid Files (*.bmc)|*.bmc|All Files (*.*)|*.*",
-                DefaultExt = "bmc",  // Set default file extension
+                DefaultExt = "bmc",
                 AddExtension = true
             };
 
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
-                // Get the selected file path
                 string filePath = saveFile.FileName;
-
-                // Write the Base64 encoded grid to the file
                 WriteToFile(filePath);
-
                 MessageBox.Show($"File saved to: {filePath}", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
@@ -37,35 +36,31 @@ namespace BletchleyMaker.Functions
         {
             using (StreamWriter writer = new StreamWriter(filePath))
             {
-                // Convert the grid to a byte array
-                byte[] byteArray = GridToByteArray();
+                // Create a string list with serialized data
+                List<string> lines = new List<string>();
 
-                // Base64 encode the byte array
-                string base64Encoded = Convert.ToBase64String(byteArray);
-
-                // Write the Base64 string to the file
-                writer.Write(base64Encoded);
-            }
-        }
-
-        private byte[] GridToByteArray()
-        {
-            int rows = grid.GetLength(0);
-            int cols = grid.GetLength(1);
-
-            // Create a byte array large enough to hold all the characters from the grid
-            byte[] byteArray = new byte[rows * cols];
-
-            int index = 0;
-            for (int row = 0; row < rows; row++)
-            {
-                for (int col = 0; col < cols; col++)
+                // Flatten the grid into a string
+                int rows = grid.GetLength(0);
+                int cols = grid.GetLength(1);
+                StringBuilder gridData = new StringBuilder();
+                for (int row = 0; row < rows; row++)
                 {
-                    byteArray[index++] = (byte)grid[row, col];
+                    for (int col = 0; col < cols; col++)
+                    {
+                        gridData.Append(grid[row, col]);
+                    }
                 }
-            }
 
-            return byteArray;
+                lines.Add(Convert.ToBase64String(Encoding.UTF8.GetBytes(gridData.ToString())));
+                lines.Add("---"); // delimiter between grid and saved codes
+
+                foreach (string code in savedCodes)
+                {
+                    lines.Add(Convert.ToBase64String(Encoding.UTF8.GetBytes(code)));
+                }
+
+                writer.Write(string.Join("\n", lines));
+            }
         }
     }
 }

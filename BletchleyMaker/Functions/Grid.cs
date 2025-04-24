@@ -119,8 +119,6 @@ namespace BletchleyMaker.Functions
                     return;
                 }
             }
-
-            MessageBox.Show("Grid set successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
 
         // Removes spaces from a character array before it's used to populate the grid

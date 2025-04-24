@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace BletchleyMaker.Functions
 {
     internal class Open
     {
+        private List<string> loadedCodes = new List<string>();
+        public List<char> GetList() => decodedList;
+        public List<string> GetSavedCodes() => loadedCodes;
         private List<char> decodedList;
         public bool WasSuccessful { get; private set; } = false;
 
@@ -39,25 +43,29 @@ namespace BletchleyMaker.Functions
                 }
             }
         }
-        
+
 
         private void ReadFromFile(string filePath)
         {
-            try
+            string fileContent = File.ReadAllText(filePath);
+            string[] sections = fileContent.Split(new[] { "---" }, StringSplitOptions.None);
+
+            if (sections.Length >= 1)
             {
-                // Read all text from the file (Base64 encoded string)
-                string fileContent = File.ReadAllText(filePath);
-
-                // Decode the Base64 string into a byte array
-                byte[] decodedBytes = Convert.FromBase64String(fileContent);
-
-                // Convert the byte array back into a List<char>
-                ConvertByteArrayToList(decodedBytes);
+                // Decode grid
+                byte[] gridBytes = Convert.FromBase64String(sections[0]);
+                ConvertByteArrayToList(gridBytes);
             }
-            catch (Exception ex)
+
+            if (sections.Length > 1)
             {
-                // Handle errors (e.g., file not found, Base64 decode error, etc.)
-                MessageBox.Show($"Error reading or decoding the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Decode saved codes
+                loadedCodes.Clear();
+                string[] encodedCodes = sections[1].Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string encoded in encodedCodes)
+                {
+                    loadedCodes.Add(Encoding.UTF8.GetString(Convert.FromBase64String(encoded)));
+                }
             }
         }
 
@@ -72,7 +80,7 @@ namespace BletchleyMaker.Functions
             }
         }
 
-        public List<char> GetList()
+        public List<char> MyGetList()
         {
             return decodedList;
         }
