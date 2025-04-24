@@ -47,7 +47,7 @@
 
 		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\Assets\LICENSE.rtf" />
 
-
+		
 		<Feature Id="ProductFeature" Title="BletchleyMaker" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
 			<ComponentGroupRef Id="PublishedComponents"/>

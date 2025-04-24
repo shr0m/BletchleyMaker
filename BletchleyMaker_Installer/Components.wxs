@@ -2,39 +2,59 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
 	<Fragment>
-		<!--Product components-->
-		<ComponentGroup Id="ProductComponents">
-			<ComponentRef Id="MainAppShortCut"/>
-		</ComponentGroup>
-
-		<!--Install location-->
+		<!-- Install location -->
 		<DirectoryRef Id="INSTALLFOLDER" FileSource="..\BletchleyMaker\bin\Debug\net8.0-windows\win-$(var.Platform)\publish\">
 
-			<!-- Shortcut to main app -->
+			<!-- Main app shortcut (no need to install the executable here) -->
 			<Component Id="MainAppShortCut" Guid="{26667662-178F-4B89-B003-4DD86F5BF57D}">
-
 				<Shortcut Id="MainAppShortcut"
-					Name="BletchleyMaker"
-					Target="[INSTALLFOLDER]BletchleyMaker.exe"
-					Directory="ProgramMenuFolder"
-					WorkingDirectory="INSTALLFOLDER"
-					Icon="icon.ico"
-				/>
+                    Name="BletchleyMaker"
+                    Target="[INSTALLFOLDER]BletchleyMaker.exe"
+                    Directory="ProgramMenuFolder"
+                    WorkingDirectory="INSTALLFOLDER"
+                    Icon="icon.ico"
+                    Advertise="no"
+                    Description="Launch BletchleyMaker" />
 
 				<!-- Desktop Shortcut -->
 				<Shortcut Id="MainAppShortcut_Desktop"
-					Name="BletchleyMaker"
-					Target="[INSTALLFOLDER]BletchleyMaker.exe"
-					Directory="DesktopFolder"
-					WorkingDirectory="INSTALLFOLDER"
-					Icon="icon.ico" />
-				
-				<RegistryValue Id="RegShortcutKey" Root="HKCU" Key="SOFTWARE\!(loc.ProductNameFolder)" Name="Shortcut" Value="1" Type="integer" KeyPath="yes"/>
+                    Name="BletchleyMaker"
+                    Target="[INSTALLFOLDER]BletchleyMaker.exe"
+                    Directory="DesktopFolder"
+                    WorkingDirectory="INSTALLFOLDER"
+                    Icon="icon.ico"
+                    Advertise="no"
+                    Description="Launch BletchleyMaker" />
 
-				<RemoveFolder Id="RemoveStartMenu" Directory="ProgramMenuFolder" On="uninstall"/>
+				<!-- Removed KeyPath="yes" from RegistryValue to avoid conflict -->
+				<RegistryValue Id="RegShortcutKey" Root="HKCU" Key="SOFTWARE\!(loc.ProductNameFolder)" Name="Shortcut" Value="1" Type="integer" />
+				<RemoveFolder Id="RemoveStartMenu" Directory="ProgramMenuFolder" On="uninstall" />
+			</Component>
+
+			<!-- .bmc recognition (still with its own component) -->
+			<Component Id="FileAssociationComponent" Guid="{D0D23180-9789-4937-BB7D-50B44F314D87}">
+				<RegistryKey Root="HKCR" Key=".bmc" Action="createAndRemoveOnUninstall">
+					<RegistryValue Value="BletchleyMaker.bmcfile" Type="string" />
+				</RegistryKey>
+
+				<RegistryKey Root="HKCR" Key="BletchleyMaker.bmcfile" Action="createAndRemoveOnUninstall">
+					<RegistryValue Value="Bletchley Grid File" Type="string" />
+					<RegistryKey Key="DefaultIcon">
+						<RegistryValue Value="[INSTALLFOLDER]BletchleyMaker.exe,0" Type="string" />
+					</RegistryKey>
+					<RegistryKey Key="shell\open\command">
+						<RegistryValue Value="&quot;[INSTALLFOLDER]BletchleyMaker.exe&quot; &quot;%1&quot;" Type="string" />
+					</RegistryKey>
+				</RegistryKey>
+
+				<CreateFolder />
 			</Component>
 		</DirectoryRef>
-		
+
+		<!-- Product components -->
+		<ComponentGroup Id="ProductComponents">
+			<ComponentRef Id="MainAppShortCut" />
+			<ComponentRef Id="FileAssociationComponent" />
+		</ComponentGroup>
 	</Fragment>
-	
 </Wix>

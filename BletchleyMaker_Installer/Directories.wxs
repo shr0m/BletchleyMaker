@@ -4,24 +4,22 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 
-			<!-- Start Menu-->
+			<!-- Start Menu -->
 			<Directory Id="ProgramMenuFolder" Name="!(loc.ProductNameFolder)"/>
 			<Directory Id="DesktopFolder" Name="Desktop"/>
-			
+
+			<!-- Program Files Folder (Platform Specific) -->
 			<?if $(var.Platform)=x64?>
-				<!-- Program Files Folder (64 bit) -->
-				<Directory Id="ProgramFiles64Folder">
-					<Directory Id="INSTALLFOLDER" Name="!(loc.ProductNameFolder)" />
-				</Directory>
+			<Directory Id="ProgramFiles64Folder">
+				<Directory Id="INSTALLFOLDER" Name="!(loc.ProductNameFolder)" />
+			</Directory>
 			<?else?>
-				<!-- Program Files Folder (32 bit) -->
-				<Directory Id="ProgramFilesFolder">
-					<Directory Id="INSTALLFOLDER" Name="!(loc.ProductNameFolder)" />
-				</Directory>
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="!(loc.ProductNameFolder)" />
+			</Directory>
 			<?endif?>
-			
-			
+
 		</Directory>
 	</Fragment>
-	
+
 </Wix>
