@@ -35,7 +35,7 @@ namespace BletchleyMaker.Forms
             {
                 form.SetChars(text.ToList<char>()); // Update Main's list
                 form.grid.SetChars(text.ToList<char>()); // Update Grid's list    
-                form.grid.Generate();           
+                form.grid.Generate();
 
                 this.Close();
             }

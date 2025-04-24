@@ -164,9 +164,11 @@ namespace BletchleyMaker
         private void supportToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Open open = new Open();
-            List<char> list = open.GetList();
-
-            grid.SetGrid(list.ToArray());
+            if (open.WasSuccessful)
+            {
+                List<char> list = open.GetList();
+                grid.SetGrid(list.ToArray());
+            }
         }
 
         private void splitBox_CheckedChanged(object sender, EventArgs e)

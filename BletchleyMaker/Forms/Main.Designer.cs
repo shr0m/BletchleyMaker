@@ -102,7 +102,7 @@
             // 
             col1row1.AutoSize = true;
             col1row1.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            col1row1.Location = new Point(100, 132);
+            col1row1.Location = new Point(80, 115);
             col1row1.Margin = new Padding(4, 0, 4, 0);
             col1row1.Name = "col1row1";
             col1row1.Size = new Size(45, 45);
@@ -114,10 +114,10 @@
             // 
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.gridimg;
-            pictureBox1.Location = new Point(63, 90);
+            pictureBox1.Location = new Point(31, 68);
             pictureBox1.Margin = new Padding(4, 2, 4, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(468, 484);
+            pictureBox1.Size = new Size(539, 545);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -126,7 +126,7 @@
             // 
             col5row1.AutoSize = true;
             col5row1.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col5row1.Location = new Point(379, 132);
+            col5row1.Location = new Point(400, 117);
             col5row1.Margin = new Padding(4, 0, 4, 0);
             col5row1.Name = "col5row1";
             col5row1.Size = new Size(45, 45);
@@ -138,7 +138,7 @@
             // 
             col4row4.AutoSize = true;
             col4row4.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col4row4.Location = new Point(310, 343);
+            col4row4.Location = new Point(318, 360);
             col4row4.Margin = new Padding(4, 0, 4, 0);
             col4row4.Name = "col4row4";
             col4row4.Size = new Size(45, 45);
@@ -150,7 +150,7 @@
             // 
             col3row4.AutoSize = true;
             col3row4.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col3row4.Location = new Point(236, 343);
+            col3row4.Location = new Point(236, 360);
             col3row4.Margin = new Padding(4, 0, 4, 0);
             col3row4.Name = "col3row4";
             col3row4.Size = new Size(45, 45);
@@ -162,7 +162,7 @@
             // 
             col2row4.AutoSize = true;
             col2row4.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col2row4.Location = new Point(165, 343);
+            col2row4.Location = new Point(157, 360);
             col2row4.Margin = new Padding(4, 0, 4, 0);
             col2row4.Name = "col2row4";
             col2row4.Size = new Size(45, 45);
@@ -174,7 +174,7 @@
             // 
             col1row4.AutoSize = true;
             col1row4.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col1row4.Location = new Point(100, 343);
+            col1row4.Location = new Point(80, 360);
             col1row4.Margin = new Padding(4, 0, 4, 0);
             col1row4.Name = "col1row4";
             col1row4.Size = new Size(45, 45);
@@ -186,7 +186,7 @@
             // 
             col6row3.AutoSize = true;
             col6row3.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col6row3.Location = new Point(448, 271);
+            col6row3.Location = new Point(479, 279);
             col6row3.Margin = new Padding(4, 0, 4, 0);
             col6row3.Name = "col6row3";
             col6row3.Size = new Size(45, 45);
@@ -198,7 +198,7 @@
             // 
             col5row3.AutoSize = true;
             col5row3.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col5row3.Location = new Point(379, 271);
+            col5row3.Location = new Point(400, 279);
             col5row3.Margin = new Padding(4, 0, 4, 0);
             col5row3.Name = "col5row3";
             col5row3.Size = new Size(45, 45);
@@ -210,7 +210,7 @@
             // 
             col4row3.AutoSize = true;
             col4row3.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col4row3.Location = new Point(310, 271);
+            col4row3.Location = new Point(318, 279);
             col4row3.Margin = new Padding(4, 0, 4, 0);
             col4row3.Name = "col4row3";
             col4row3.Size = new Size(45, 45);
@@ -222,7 +222,7 @@
             // 
             col3row3.AutoSize = true;
             col3row3.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col3row3.Location = new Point(236, 271);
+            col3row3.Location = new Point(236, 279);
             col3row3.Margin = new Padding(4, 0, 4, 0);
             col3row3.Name = "col3row3";
             col3row3.Size = new Size(45, 45);
@@ -234,7 +234,7 @@
             // 
             col2row3.AutoSize = true;
             col2row3.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col2row3.Location = new Point(165, 271);
+            col2row3.Location = new Point(157, 279);
             col2row3.Margin = new Padding(4, 0, 4, 0);
             col2row3.Name = "col2row3";
             col2row3.Size = new Size(45, 45);
@@ -246,7 +246,7 @@
             // 
             col1row3.AutoSize = true;
             col1row3.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col1row3.Location = new Point(100, 271);
+            col1row3.Location = new Point(80, 279);
             col1row3.Margin = new Padding(4, 0, 4, 0);
             col1row3.Name = "col1row3";
             col1row3.Size = new Size(45, 45);
@@ -258,7 +258,7 @@
             // 
             col6row2.AutoSize = true;
             col6row2.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col6row2.Location = new Point(448, 201);
+            col6row2.Location = new Point(479, 199);
             col6row2.Margin = new Padding(4, 0, 4, 0);
             col6row2.Name = "col6row2";
             col6row2.Size = new Size(45, 45);
@@ -270,7 +270,7 @@
             // 
             col5row2.AutoSize = true;
             col5row2.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col5row2.Location = new Point(383, 201);
+            col5row2.Location = new Point(400, 199);
             col5row2.Margin = new Padding(4, 0, 4, 0);
             col5row2.Name = "col5row2";
             col5row2.Size = new Size(45, 45);
@@ -282,7 +282,7 @@
             // 
             col4row2.AutoSize = true;
             col4row2.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col4row2.Location = new Point(310, 201);
+            col4row2.Location = new Point(318, 199);
             col4row2.Margin = new Padding(4, 0, 4, 0);
             col4row2.Name = "col4row2";
             col4row2.Size = new Size(45, 45);
@@ -294,7 +294,7 @@
             // 
             col3row2.AutoSize = true;
             col3row2.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col3row2.Location = new Point(236, 201);
+            col3row2.Location = new Point(236, 199);
             col3row2.Margin = new Padding(4, 0, 4, 0);
             col3row2.Name = "col3row2";
             col3row2.Size = new Size(45, 45);
@@ -306,7 +306,7 @@
             // 
             col2row2.AutoSize = true;
             col2row2.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col2row2.Location = new Point(165, 201);
+            col2row2.Location = new Point(157, 199);
             col2row2.Margin = new Padding(4, 0, 4, 0);
             col2row2.Name = "col2row2";
             col2row2.Size = new Size(45, 45);
@@ -318,7 +318,7 @@
             // 
             col1row2.AutoSize = true;
             col1row2.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col1row2.Location = new Point(100, 201);
+            col1row2.Location = new Point(80, 199);
             col1row2.Margin = new Padding(4, 0, 4, 0);
             col1row2.Name = "col1row2";
             col1row2.Size = new Size(45, 45);
@@ -330,7 +330,7 @@
             // 
             col6row1.AutoSize = true;
             col6row1.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col6row1.Location = new Point(448, 132);
+            col6row1.Location = new Point(479, 116);
             col6row1.Margin = new Padding(4, 0, 4, 0);
             col6row1.Name = "col6row1";
             col6row1.Size = new Size(45, 45);
@@ -342,7 +342,7 @@
             // 
             col4row1.AutoSize = true;
             col4row1.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col4row1.Location = new Point(310, 132);
+            col4row1.Location = new Point(318, 115);
             col4row1.Margin = new Padding(4, 0, 4, 0);
             col4row1.Name = "col4row1";
             col4row1.Size = new Size(45, 45);
@@ -354,7 +354,7 @@
             // 
             col3row1.AutoSize = true;
             col3row1.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col3row1.Location = new Point(236, 132);
+            col3row1.Location = new Point(236, 115);
             col3row1.Margin = new Padding(4, 0, 4, 0);
             col3row1.Name = "col3row1";
             col3row1.Size = new Size(45, 45);
@@ -366,7 +366,7 @@
             // 
             col2row1.AutoSize = true;
             col2row1.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col2row1.Location = new Point(165, 132);
+            col2row1.Location = new Point(157, 115);
             col2row1.Margin = new Padding(4, 0, 4, 0);
             col2row1.Name = "col2row1";
             col2row1.Size = new Size(45, 45);
@@ -378,7 +378,7 @@
             // 
             col6row6.AutoSize = true;
             col6row6.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col6row6.Location = new Point(448, 486);
+            col6row6.Location = new Point(479, 518);
             col6row6.Margin = new Padding(4, 0, 4, 0);
             col6row6.Name = "col6row6";
             col6row6.Size = new Size(45, 45);
@@ -390,7 +390,7 @@
             // 
             col5row6.AutoSize = true;
             col5row6.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col5row6.Location = new Point(383, 486);
+            col5row6.Location = new Point(400, 518);
             col5row6.Margin = new Padding(4, 0, 4, 0);
             col5row6.Name = "col5row6";
             col5row6.Size = new Size(45, 45);
@@ -402,7 +402,7 @@
             // 
             col4row6.AutoSize = true;
             col4row6.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col4row6.Location = new Point(310, 486);
+            col4row6.Location = new Point(318, 518);
             col4row6.Margin = new Padding(4, 0, 4, 0);
             col4row6.Name = "col4row6";
             col4row6.Size = new Size(45, 45);
@@ -414,7 +414,7 @@
             // 
             col3row6.AutoSize = true;
             col3row6.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col3row6.Location = new Point(236, 486);
+            col3row6.Location = new Point(236, 518);
             col3row6.Margin = new Padding(4, 0, 4, 0);
             col3row6.Name = "col3row6";
             col3row6.Size = new Size(45, 45);
@@ -426,7 +426,7 @@
             // 
             col2row6.AutoSize = true;
             col2row6.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col2row6.Location = new Point(165, 486);
+            col2row6.Location = new Point(157, 518);
             col2row6.Margin = new Padding(4, 0, 4, 0);
             col2row6.Name = "col2row6";
             col2row6.Size = new Size(45, 45);
@@ -438,7 +438,7 @@
             // 
             col1row6.AutoSize = true;
             col1row6.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col1row6.Location = new Point(100, 486);
+            col1row6.Location = new Point(80, 518);
             col1row6.Margin = new Padding(4, 0, 4, 0);
             col1row6.Name = "col1row6";
             col1row6.Size = new Size(45, 45);
@@ -450,7 +450,7 @@
             // 
             col6row5.AutoSize = true;
             col6row5.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col6row5.Location = new Point(448, 418);
+            col6row5.Location = new Point(479, 441);
             col6row5.Margin = new Padding(4, 0, 4, 0);
             col6row5.Name = "col6row5";
             col6row5.Size = new Size(45, 45);
@@ -462,7 +462,7 @@
             // 
             col5row5.AutoSize = true;
             col5row5.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col5row5.Location = new Point(379, 418);
+            col5row5.Location = new Point(400, 441);
             col5row5.Margin = new Padding(4, 0, 4, 0);
             col5row5.Name = "col5row5";
             col5row5.Size = new Size(45, 45);
@@ -474,7 +474,7 @@
             // 
             col4row5.AutoSize = true;
             col4row5.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col4row5.Location = new Point(310, 418);
+            col4row5.Location = new Point(318, 441);
             col4row5.Margin = new Padding(4, 0, 4, 0);
             col4row5.Name = "col4row5";
             col4row5.Size = new Size(45, 45);
@@ -486,7 +486,7 @@
             // 
             col3row5.AutoSize = true;
             col3row5.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col3row5.Location = new Point(236, 418);
+            col3row5.Location = new Point(236, 441);
             col3row5.Margin = new Padding(4, 0, 4, 0);
             col3row5.Name = "col3row5";
             col3row5.Size = new Size(45, 45);
@@ -498,7 +498,7 @@
             // 
             col2row5.AutoSize = true;
             col2row5.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col2row5.Location = new Point(165, 418);
+            col2row5.Location = new Point(157, 441);
             col2row5.Margin = new Padding(4, 0, 4, 0);
             col2row5.Name = "col2row5";
             col2row5.Size = new Size(45, 45);
@@ -510,7 +510,7 @@
             // 
             col1row5.AutoSize = true;
             col1row5.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col1row5.Location = new Point(100, 418);
+            col1row5.Location = new Point(80, 441);
             col1row5.Margin = new Padding(4, 0, 4, 0);
             col1row5.Name = "col1row5";
             col1row5.Size = new Size(45, 45);
@@ -522,7 +522,7 @@
             // 
             col6row4.AutoSize = true;
             col6row4.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col6row4.Location = new Point(448, 343);
+            col6row4.Location = new Point(479, 360);
             col6row4.Margin = new Padding(4, 0, 4, 0);
             col6row4.Name = "col6row4";
             col6row4.Size = new Size(45, 45);
@@ -534,7 +534,7 @@
             // 
             col5row4.AutoSize = true;
             col5row4.Font = new Font("Arial", 14.25F, FontStyle.Bold);
-            col5row4.Location = new Point(383, 343);
+            col5row4.Location = new Point(400, 360);
             col5row4.Margin = new Padding(4, 0, 4, 0);
             col5row4.Name = "col5row4";
             col5row4.Size = new Size(45, 45);
@@ -545,7 +545,7 @@
             // makeGrid
             // 
             makeGrid.Font = new Font("Arial", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            makeGrid.Location = new Point(178, 617);
+            makeGrid.Location = new Point(178, 625);
             makeGrid.Margin = new Padding(4, 2, 4, 2);
             makeGrid.Name = "makeGrid";
             makeGrid.Size = new Size(243, 87);
@@ -670,7 +670,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(11, 4, 0, 4);
-            menuStrip1.Size = new Size(1228, 46);
+            menuStrip1.Size = new Size(1228, 43);
             menuStrip1.TabIndex = 57;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -680,7 +680,7 @@
             supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newGridToolStripMenuItem, printToolStripMenuItem, supportToolStripMenuItem1, printToolStripMenuItem1 });
             supportToolStripMenuItem.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            supportToolStripMenuItem.Size = new Size(76, 38);
+            supportToolStripMenuItem.Size = new Size(76, 35);
             supportToolStripMenuItem.Text = "File";
             // 
             // newGridToolStripMenuItem
@@ -733,13 +733,13 @@
             // 
             editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { characterSetToolStripMenuItem });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(74, 38);
+            editToolStripMenuItem.Size = new Size(74, 35);
             editToolStripMenuItem.Text = "Edit";
             // 
             // characterSetToolStripMenuItem
             // 
             characterSetToolStripMenuItem.Name = "characterSetToolStripMenuItem";
-            characterSetToolStripMenuItem.Size = new Size(359, 44);
+            characterSetToolStripMenuItem.Size = new Size(291, 44);
             characterSetToolStripMenuItem.Text = "Character Set";
             characterSetToolStripMenuItem.Click += characterSetToolStripMenuItem_Click;
             // 
@@ -747,7 +747,7 @@
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { guideToolStripMenuItem, githubRepositoryToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(82, 38);
+            helpToolStripMenuItem.Size = new Size(82, 35);
             helpToolStripMenuItem.Text = "Help";
             // 
             // guideToolStripMenuItem
