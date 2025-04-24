@@ -1,22 +1,24 @@
 using System.Diagnostics;
+using BletchleyMaker.Forms;
 using BletchleyMaker.Functions;
 
 namespace BletchleyMaker
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         internal Grid grid;
         private List<Label> componentArray;
         private List<string> savedCodes;
         private ViewCodes view = null!;
+        private List<char> Chars = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             this.AcceptButton = execute;
             savedCodes = new List<string>();
             componentArray = new List<Label> { col1row1, col2row1, col3row1, col4row1, col5row1, col6row1, col1row2, col2row2, col3row2, col4row2, col5row2, col6row2, col1row3, col2row3, col3row3, col4row3, col5row3, col6row3, col1row4, col2row4, col3row4, col4row4, col5row4, col6row4, col1row5, col2row5, col3row5, col4row5, col5row5, col6row5, col1row6, col2row6, col3row6, col4row6, col5row6, col6row6 };
-            grid = new Grid(componentArray);
+            grid = new Grid(componentArray, Chars, this);
 
             grid.Generate();
         }
@@ -206,7 +208,7 @@ namespace BletchleyMaker
                 MessageBox.Show("You can't add more than 10 codes", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
-            
+
         }
 
         private void viewCodes_Click(object sender, EventArgs e)
@@ -248,6 +250,18 @@ namespace BletchleyMaker
             }
 
             newGrid.Dispose();
+        }
+
+        public void SetChars(List<char> tempChar)
+        {
+            Chars = tempChar;
+        }
+
+        private void characterSetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CharacterSet charSet = new CharacterSet(Chars, this);
+            charSet.Show();
+            charSet.BringToFront();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BletchleyMaker
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             col1row1 = new Label();
             pictureBox1 = new PictureBox();
             col5row1 = new Label();
@@ -84,6 +84,8 @@
             printToolStripMenuItem = new ToolStripMenuItem();
             supportToolStripMenuItem1 = new ToolStripMenuItem();
             printToolStripMenuItem1 = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            characterSetToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             guideToolStripMenuItem = new ToolStripMenuItem();
             githubRepositoryToolStripMenuItem = new ToolStripMenuItem();
@@ -92,8 +94,6 @@
             splitBox = new CheckBox();
             addCode = new Button();
             viewCodes = new Button();
-            editToolStripMenuItem = new ToolStripMenuItem();
-            characterSetToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -557,7 +557,7 @@
             // inputBox
             // 
             inputBox.Location = new Point(648, 559);
-            inputBox.Margin = new Padding(6, 6, 6, 6);
+            inputBox.Margin = new Padding(6);
             inputBox.Name = "inputBox";
             inputBox.Size = new Size(524, 39);
             inputBox.TabIndex = 44;
@@ -578,7 +578,7 @@
             // ruleBox
             // 
             ruleBox.Location = new Point(648, 452);
-            ruleBox.Margin = new Padding(6, 6, 6, 6);
+            ruleBox.Margin = new Padding(6);
             ruleBox.Name = "ruleBox";
             ruleBox.Size = new Size(158, 39);
             ruleBox.TabIndex = 47;
@@ -627,7 +627,7 @@
             decodeCheck.AutoSize = true;
             decodeCheck.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             decodeCheck.Location = new Point(832, 452);
-            decodeCheck.Margin = new Padding(6, 6, 6, 6);
+            decodeCheck.Margin = new Padding(6);
             decodeCheck.Name = "decodeCheck";
             decodeCheck.Size = new Size(138, 34);
             decodeCheck.TabIndex = 52;
@@ -640,7 +640,7 @@
             outputBox.CharacterCasing = CharacterCasing.Upper;
             outputBox.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             outputBox.Location = new Point(604, 109);
-            outputBox.Margin = new Padding(6, 6, 6, 6);
+            outputBox.Margin = new Padding(6);
             outputBox.MaxLength = 44;
             outputBox.Multiline = true;
             outputBox.Name = "outputBox";
@@ -653,7 +653,7 @@
             // 
             copyButton.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             copyButton.Location = new Point(604, 337);
-            copyButton.Margin = new Padding(6, 6, 6, 6);
+            copyButton.Margin = new Padding(6);
             copyButton.Name = "copyButton";
             copyButton.Size = new Size(188, 53);
             copyButton.TabIndex = 55;
@@ -688,20 +688,20 @@
             newGridToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manualAddToolStripMenuItem, generateToolStripMenuItem });
             newGridToolStripMenuItem.Image = Properties.Resources.addition;
             newGridToolStripMenuItem.Name = "newGridToolStripMenuItem";
-            newGridToolStripMenuItem.Size = new Size(359, 44);
+            newGridToolStripMenuItem.Size = new Size(256, 44);
             newGridToolStripMenuItem.Text = "New Grid";
             // 
             // manualAddToolStripMenuItem
             // 
             manualAddToolStripMenuItem.Name = "manualAddToolStripMenuItem";
-            manualAddToolStripMenuItem.Size = new Size(359, 44);
+            manualAddToolStripMenuItem.Size = new Size(283, 44);
             manualAddToolStripMenuItem.Text = "Manual Add";
             manualAddToolStripMenuItem.Click += manualAddToolStripMenuItem_Click;
             // 
             // generateToolStripMenuItem
             // 
             generateToolStripMenuItem.Name = "generateToolStripMenuItem";
-            generateToolStripMenuItem.Size = new Size(359, 44);
+            generateToolStripMenuItem.Size = new Size(283, 44);
             generateToolStripMenuItem.Text = "Generate";
             generateToolStripMenuItem.Click += generateToolStripMenuItem_Click;
             // 
@@ -709,7 +709,7 @@
             // 
             printToolStripMenuItem.Image = Properties.Resources.saveimg;
             printToolStripMenuItem.Name = "printToolStripMenuItem";
-            printToolStripMenuItem.Size = new Size(359, 44);
+            printToolStripMenuItem.Size = new Size(256, 44);
             printToolStripMenuItem.Text = "Save";
             printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
@@ -717,7 +717,7 @@
             // 
             supportToolStripMenuItem1.Image = Properties.Resources.openimg;
             supportToolStripMenuItem1.Name = "supportToolStripMenuItem1";
-            supportToolStripMenuItem1.Size = new Size(359, 44);
+            supportToolStripMenuItem1.Size = new Size(256, 44);
             supportToolStripMenuItem1.Text = "Open";
             supportToolStripMenuItem1.Click += supportToolStripMenuItem1_Click;
             // 
@@ -725,9 +725,23 @@
             // 
             printToolStripMenuItem1.Image = Properties.Resources.printimg;
             printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            printToolStripMenuItem1.Size = new Size(359, 44);
+            printToolStripMenuItem1.Size = new Size(256, 44);
             printToolStripMenuItem1.Text = "Print";
             printToolStripMenuItem1.Click += printToolStripMenuItem1_Click;
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { characterSetToolStripMenuItem });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(74, 38);
+            editToolStripMenuItem.Text = "Edit";
+            // 
+            // characterSetToolStripMenuItem
+            // 
+            characterSetToolStripMenuItem.Name = "characterSetToolStripMenuItem";
+            characterSetToolStripMenuItem.Size = new Size(359, 44);
+            characterSetToolStripMenuItem.Text = "Character Set";
+            characterSetToolStripMenuItem.Click += characterSetToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -740,7 +754,7 @@
             // 
             guideToolStripMenuItem.Image = Properties.Resources.rafacimg;
             guideToolStripMenuItem.Name = "guideToolStripMenuItem";
-            guideToolStripMenuItem.Size = new Size(359, 44);
+            guideToolStripMenuItem.Size = new Size(337, 44);
             guideToolStripMenuItem.Text = "About RAFAC";
             guideToolStripMenuItem.Click += guideToolStripMenuItem_Click;
             // 
@@ -749,7 +763,7 @@
             githubRepositoryToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { errorReportToolStripMenuItem, feedbackToolStripMenuItem });
             githubRepositoryToolStripMenuItem.Image = Properties.Resources.githubimg;
             githubRepositoryToolStripMenuItem.Name = "githubRepositoryToolStripMenuItem";
-            githubRepositoryToolStripMenuItem.Size = new Size(359, 44);
+            githubRepositoryToolStripMenuItem.Size = new Size(337, 44);
             githubRepositoryToolStripMenuItem.Text = "Github Repository";
             // 
             // errorReportToolStripMenuItem
@@ -783,7 +797,7 @@
             // 
             addCode.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addCode.Location = new Point(802, 337);
-            addCode.Margin = new Padding(6, 6, 6, 6);
+            addCode.Margin = new Padding(6);
             addCode.Name = "addCode";
             addCode.Size = new Size(167, 53);
             addCode.TabIndex = 59;
@@ -795,7 +809,7 @@
             // 
             viewCodes.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             viewCodes.Location = new Point(979, 337);
-            viewCodes.Margin = new Padding(6, 6, 6, 6);
+            viewCodes.Margin = new Padding(6);
             viewCodes.Name = "viewCodes";
             viewCodes.Size = new Size(217, 53);
             viewCodes.TabIndex = 60;
@@ -803,20 +817,7 @@
             viewCodes.UseVisualStyleBackColor = true;
             viewCodes.Click += viewCodes_Click;
             // 
-            // editToolStripMenuItem
-            // 
-            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { characterSetToolStripMenuItem });
-            editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(74, 38);
-            editToolStripMenuItem.Text = "Edit";
-            // 
-            // characterSetToolStripMenuItem
-            // 
-            characterSetToolStripMenuItem.Name = "characterSetToolStripMenuItem";
-            characterSetToolStripMenuItem.Size = new Size(359, 44);
-            characterSetToolStripMenuItem.Text = "Character Set";
-            // 
-            // Form1
+            // Main
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -877,7 +878,7 @@
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 2, 4, 2);
             MaximizeBox = false;
-            Name = "Form1";
+            Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BletchleyMaker";
             Load += Form1_Load;

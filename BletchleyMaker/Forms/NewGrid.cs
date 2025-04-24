@@ -92,10 +92,6 @@ namespace BletchleyMaker
         {
             return list;
         }
-        public void CloseForm()
-        {
-            this.Close();
-        }
         private void MoveWithArrows(object sender, KeyEventArgs e)
         {
             TextBox? current = sender as TextBox;

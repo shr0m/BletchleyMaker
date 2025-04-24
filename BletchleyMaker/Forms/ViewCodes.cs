@@ -14,8 +14,8 @@ namespace BletchleyMaker
     {
         int currentPos = 0;
         List<CheckBox> addCodes = new List<CheckBox>();
-        private Form1 mainForm;
-        public ViewCodes(List<string> savedCodes, Form1 form)
+        private Main mainForm;
+        public ViewCodes(List<string> savedCodes, Main form)
         {
             InitializeComponent();
 
