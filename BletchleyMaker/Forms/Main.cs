@@ -61,7 +61,7 @@ namespace BletchleyMaker
 
             if (!(grid.ValidateCharacterSet(cipher.GetText())))
             {
-                MessageBox.Show("An unknown character is present, please only use A-Z and 0-9", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("An unknown character is present, please only use characters in the character set", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
 
@@ -159,15 +159,19 @@ namespace BletchleyMaker
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Save save = new Save(grid.GetGrid());
+            Save save = new Save(grid.GetGrid(), savedCodes);
         }
         private void supportToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Open open = new Open();
             if (open.WasSuccessful)
             {
-                List<char> list = open.GetList();
+                List<char> list = open.MyGetList();
                 grid.SetGrid(list.ToArray());
+                SetChars(list);
+                savedCodes = open.GetSavedCodes();
+                execute.PerformClick();
+                MessageBox.Show("Savefile successfully opened", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
 
@@ -243,12 +247,14 @@ namespace BletchleyMaker
 
         private void manualAddToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewGrid newGrid = new NewGrid();
+            NewGrid newGrid = new NewGrid(Chars);
 
             if (newGrid.ShowDialog() == DialogResult.OK)
             {
                 List<char> list = newGrid.GetList();
                 grid.SetGrid(list.ToArray());
+                execute.PerformClick();
+                MessageBox.Show("Grid successfully set!", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
 
             newGrid.Dispose();
@@ -262,7 +268,7 @@ namespace BletchleyMaker
         private void characterSetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CharacterSet charSet = new CharacterSet(Chars, this);
-            charSet.Show();
+            charSet.ShowDialog();
             charSet.BringToFront();
         }
     }

@@ -14,7 +14,8 @@ namespace BletchleyMaker
     {
         private TextBox[] compArray;
         private List<char> list = new List<char>();
-        public NewGrid()
+        private char[] Chars;
+        public NewGrid(List<char> chars)
         {
             InitializeComponent();
             this.AcceptButton = submit;
@@ -37,7 +38,13 @@ namespace BletchleyMaker
 
                 compArray[i].TextChanged += AutoAdvance!;
                 compArray[i].KeyDown += MoveWithArrows!;
-                compArray[i].KeyDown += HandleBackspace;
+                compArray[i].KeyDown += HandleBackspace!;
+            }
+
+            Chars = new char[36];
+            for (int i = 0; i < Chars.Length; i++)
+            {
+                Chars[i] = chars[i];
             }
         }
 
@@ -56,7 +63,6 @@ namespace BletchleyMaker
 
         private bool ValidateInputs()
         {
-            char[] validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".ToCharArray();
             HashSet<char> seenChars = new HashSet<char>();
 
             foreach (TextBox textBox in compArray)
@@ -71,9 +77,9 @@ namespace BletchleyMaker
 
                 char character = input[0];
 
-                if (!validChars.Contains(character))
+                if (!Chars.Contains(character))
                 {
-                    MessageBox.Show("Invalid character detected. Please use A-Z and 0-9 only.", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show("Invalid character detected. Please use characters in the character set.", "Error", MessageBoxButtons.OK, MessageBoxIcon.None);
                     return false;
                 }
 
@@ -122,15 +128,29 @@ namespace BletchleyMaker
             if (input.Length == 1)
             {
                 char c = input[0];
-                if ("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".Contains(c))
-                {
-                    current.Text = c.ToString();
-                    if (index < compArray.Length - 1)
-                        compArray[index + 1].Focus();
-                }
-                else
+
+                // Check if the character is in the allowed character set
+                if (!Chars.Contains(c))
                 {
                     current.Clear();
+                    return;
+                }
+
+                // Check for duplicate entries
+                foreach (TextBox tb in compArray)
+                {
+                    if (tb != current && tb.Text.ToUpper() == c.ToString())
+                    {
+                        current.Clear();
+                        return;
+                    }
+                }
+
+                // Set properly formatted character and move focus
+                current.Text = c.ToString();
+                if (index < compArray.Length - 1)
+                {
+                    compArray[index + 1].Focus();
                 }
             }
         }

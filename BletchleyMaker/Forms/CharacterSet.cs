@@ -66,5 +66,10 @@ namespace BletchleyMaker.Forms
         {
             this.Close();
         }
+
+        private void resetChars_Click(object sender, EventArgs e)
+        {
+            characterBox.Text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        }
     }
 }
