@@ -10,7 +10,7 @@ A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The p
 - Saving, opening and printing grids (Printing ONLY works in A4)
 
 ## Tool Use
-To install the application, download the MSI file [here](https://github.com/shr0m/BletchleyMaker/releases/tag/v2.1.0.0).
+To install the application, download the MSI file [here](https://github.com/shr0m/BletchleyMaker/releases/tag/v2.1.0.1).
 
 ### Basic guide:
 - Generate: Generates a new random 6x6 grid including letters A-Z and 0-9
@@ -30,4 +30,4 @@ Any issues can be reported in the issues tab of this repository. However, the de
 Requests can be made for other features and updates.
 
 ## About RAFAC
-The Royal Air Force Air Cadets is the combined volunteer-military youth organisation sponsored by the Royal Air Force, which is formed by both the Air Training Corps and RAF Sections of the Combined Cadet Force. The organisation is headed by a former serving RAF officer, Commandant Air Cadets.
+The [Royal Air Force Air Cadets](https://www.raf.mod.uk/aircadets/) is the combined volunteer-military youth organisation sponsored by the Royal Air Force, which is formed by both the Air Training Corps and RAF Sections of the Combined Cadet Force. The organisation is headed by a former serving RAF officer, Commandant Air Cadets.
