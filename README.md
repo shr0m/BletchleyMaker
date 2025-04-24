@@ -10,7 +10,7 @@ A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The p
 - Saving, opening and printing grids (Printing ONLY works in A4)
 
 ## Tool Use
-To install the application, download the MSI file [here](https://github.com/shr0m/BletchleyMaker/releases/tag/v2.1.0.1).
+To install the application, download the MSI file [here](https://github.com/shr0m/BletchleyMaker/releases).
 
 ### Basic guide:
 - Generate: Generates a new random 6x6 grid including letters A-Z and 0-9
