@@ -16,8 +16,8 @@ namespace BletchleyMaker.Functions
             grid = saveGrid;
             SaveFileDialog saveFile = new SaveFileDialog
             {
-                Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
-                DefaultExt = "txt",  // Set default file extension
+                Filter = "BletchleyMaker Grid Files (*.bmc)|*.bmc|All Files (*.*)|*.*",
+                DefaultExt = "bmc",  // Set default file extension
                 AddExtension = true
             };
 

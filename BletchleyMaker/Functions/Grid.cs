@@ -99,8 +99,17 @@ namespace BletchleyMaker.Functions
             {
                 try
                 {
-                    components[i].Text = newChars[i].ToString();
-                    gridArr[i] = newChars[i];
+                    if (newChars[i] != '&')
+                    {
+                        components[i].Text = newChars[i].ToString();
+                        gridArr[i] = newChars[i];
+                    }
+                    else
+                    {
+                        components[i].Text = "&&";
+                        gridArr[i] = '&';
+                    }
+                    
                 }
                 catch (Exception)
                 {

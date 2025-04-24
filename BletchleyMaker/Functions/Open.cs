@@ -9,6 +9,7 @@ namespace BletchleyMaker.Functions
     internal class Open
     {
         private List<char> decodedList;
+        public bool WasSuccessful { get; private set; } = false;
 
         public Open()
         {
@@ -17,21 +18,28 @@ namespace BletchleyMaker.Functions
             // Create an OpenFileDialog instance
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
-                DefaultExt = "txt",  // Set default file extension
+                Filter = "BletchleyMaker Grid Files (*.bmc)|*.bmc|All Files (*.*)|*.*",
+                DefaultExt = "bmc",  // Set default file extension
                 AddExtension = true   // Ensure extension is added automatically
             };
 
             // Show the OpenFileDialog and check if the user selected a file
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Get the selected file path
-                string filePath = openFileDialog.FileName;
-
-                // Read and decode the content from the file
-                ReadFromFile(filePath);
+                try
+                {
+                    string filePath = openFileDialog.FileName;
+                    ReadFromFile(filePath);
+                    WasSuccessful = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error reading or decoding the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    WasSuccessful = false;
+                }
             }
         }
+        
 
         private void ReadFromFile(string filePath)
         {
