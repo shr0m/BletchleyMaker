@@ -71,5 +71,14 @@ namespace BletchleyMaker.Forms
         {
             characterBox.Text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         }
+
+        private void characterBox_TextChanged(object sender, EventArgs e)
+        {
+            if (characterBox.Text.ToUpper().Trim() == "BORING")
+            {
+                ForFelix hello = new ForFelix();
+                hello.Show();
+            }
+        }
     }
 }

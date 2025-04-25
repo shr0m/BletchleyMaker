@@ -41,6 +41,7 @@
             characterBox.Name = "characterBox";
             characterBox.Size = new Size(559, 39);
             characterBox.TabIndex = 0;
+            characterBox.TextChanged += characterBox_TextChanged;
             // 
             // okButton
             // 
