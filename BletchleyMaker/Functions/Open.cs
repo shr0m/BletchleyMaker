@@ -1,49 +1,39 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BletchleyMaker.Functions
 {
     internal class Open
     {
         private List<string> loadedCodes = new List<string>();
+        private List<char> decodedList = new List<char>();
+
         public List<char> GetList() => decodedList;
         public List<string> GetSavedCodes() => loadedCodes;
-        private List<char> decodedList;
         public bool WasSuccessful { get; private set; } = false;
 
-        public Open()
+        public Open(string filePath)
         {
-            decodedList = new List<char>();
-
-            // Create an OpenFileDialog instance
-            OpenFileDialog openFileDialog = new OpenFileDialog
+            try
             {
-                Filter = "BletchleyMaker Grid Files (*.bmc)|*.bmc|All Files (*.*)|*.*",
-                DefaultExt = "bmc",  // Set default file extension
-                AddExtension = true   // Ensure extension is added automatically
-            };
-
-            // Show the OpenFileDialog and check if the user selected a file
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
+                if (File.Exists(filePath))
                 {
-                    string filePath = openFileDialog.FileName;
                     ReadFromFile(filePath);
                     WasSuccessful = true;
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error reading or decoding the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    WasSuccessful = false;
+                    MessageBox.Show($"File does not exist: {filePath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading or decoding the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
 
         private void ReadFromFile(string filePath)
         {
@@ -71,18 +61,11 @@ namespace BletchleyMaker.Functions
 
         private void ConvertByteArrayToList(byte[] byteArray)
         {
-            // Convert the byte array to a List<char>
-            decodedList.Clear();  // Clear the list before adding new data
-
+            decodedList.Clear();
             foreach (byte b in byteArray)
             {
-                decodedList.Add((char)b);  // Cast each byte back to a char
+                decodedList.Add((char)b);
             }
-        }
-
-        public List<char> MyGetList()
-        {
-            return decodedList;
         }
     }
 }
