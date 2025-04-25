@@ -10,7 +10,7 @@ namespace BletchleyMaker
         private List<Label> componentArray;
         private List<string> savedCodes;
         private ViewCodes view = null!;
-        private List<char> Chars = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+        private List<char> Chars = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
         public Main()
         {
@@ -217,19 +217,6 @@ namespace BletchleyMaker
 
         }
 
-        private void viewCodes_Click(object sender, EventArgs e)
-        {
-            if (view == null || view.IsDisposed)
-            {
-                view = new ViewCodes(savedCodes, this);
-                view.Show();
-            }
-            else
-            {
-                view.BringToFront();
-            }
-        }
-
         public void RemoveCode(int code)
         {
             savedCodes.RemoveAt(code);
@@ -270,6 +257,26 @@ namespace BletchleyMaker
             CharacterSet charSet = new CharacterSet(Chars, this);
             charSet.ShowDialog();
             charSet.BringToFront();
+        }
+
+        private void printCodesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (view == null || view.IsDisposed)
+            {
+                view = new ViewCodes(savedCodes, this);
+                view.Show();
+            }
+            else
+            {
+                view.BringToFront();
+            }
+        }
+
+        private void automationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AutomationPrompt auto = new AutomationPrompt(this);
+            auto.ShowDialog();
+            auto.BringToFront();
         }
     }
 }
