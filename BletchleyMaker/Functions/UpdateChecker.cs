@@ -20,7 +20,7 @@ namespace BletchleyMaker.Functions
                     JObject json = JObject.Parse(jsonResponse);
 
                     string latestVersion = json["latestVersion"]!.ToString();
-                    string currentVersion = "2.1.0.1";
+                    string currentVersion = "2.1.1.0";
 
                     if (latestVersion != currentVersion)
                     {
