@@ -8,7 +8,7 @@
 	<?define ProductCode="{340C6590-BEE0-4532-9C66-9AAC5F08AA12}"?>
 	<?endif?>
 
-	<?define UpgradeCode = "{FE82C93F-E10C-4012-A434-642A23D56F8D}"?>
+	<?define UpgradeCode = "{34E862DC-9D7F-4008-AA42-DECBF94A143E}"?>
 
 	<!-- Define the product -->
 	<Product Id="$(var.ProductCode)"
@@ -24,7 +24,7 @@
 				InstallScope="perMachine"
 				Platform="$(var.Platform)"
 				Manufacturer="!(loc.Company)"
-				Description="!(loc.Description"
+				Description="!(loc.Description)"
 				Keywords="!(loc.Keywords)"
 				Comments="!(loc.Comments)"
 				Languages="!(loc.Language)"
@@ -47,7 +47,7 @@
 
 		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\Assets\LICENSE.rtf" />
 
-		
+
 		<Feature Id="ProductFeature" Title="BletchleyMaker" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
 			<ComponentGroupRef Id="PublishedComponents"/>
