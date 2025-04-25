@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Windows.Forms.VisualStyles;
 using BletchleyMaker.Forms;
 using BletchleyMaker.Functions;
 
@@ -13,7 +14,7 @@ namespace BletchleyMaker
         private List<char> Chars = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
         private List<string> Rules = new List<string>();
 
-        public Main()
+        public Main(string[]? args = null)
         {
             InitializeComponent();
             this.AcceptButton = execute;
@@ -22,6 +23,11 @@ namespace BletchleyMaker
             grid = new Grid(componentArray, Chars, this);
 
             grid.Generate();
+
+            if (args != null && args.Length > 0 && File.Exists(args[0]))
+            {
+                LoadBmcFile(new Open(args[0])); // Create this method or reuse your logic
+            }
         }
 
         private void makeGrid_Click(object sender, EventArgs e)
@@ -164,15 +170,17 @@ namespace BletchleyMaker
         }
         private void supportToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Open open = new Open();
-            if (open.WasSuccessful)
+            OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                List<char> list = open.MyGetList();
-                grid.SetGrid(list.ToArray());
-                SetChars(list);
-                savedCodes = open.GetSavedCodes();
-                execute.PerformClick();
-                MessageBox.Show("Savefile successfully opened", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                Filter = "BletchleyMaker Grid Files (*.bmc)|*.bmc|All Files (*.*)|*.*",
+                DefaultExt = "bmc",
+                AddExtension = true
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Open open = new Open(openFileDialog.FileName);
+                LoadBmcFile(open);
             }
         }
 
@@ -270,6 +278,19 @@ namespace BletchleyMaker
             else
             {
                 view.BringToFront();
+            }
+        }
+        private void LoadBmcFile(Open open)
+        {
+            if (open.WasSuccessful)
+            {
+                List<char> list = open.GetList();
+                grid.SetGrid(list.ToArray());
+                SetChars(list);
+                savedCodes = open.GetSavedCodes();
+                execute.PerformClick();
+                this.Show();
+                MessageBox.Show("Savefile successfully opened", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
     }
