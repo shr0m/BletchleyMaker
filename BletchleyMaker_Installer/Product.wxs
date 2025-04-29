@@ -3,9 +3,9 @@
 
 	<!-- Give product unique guid -->
 	<?if $(var.Platform)=x64?>
-	<?define ProductCode="{2B8CD198-70DA-49BC-BEFB-F17F4EADFCAA}"?>
+	<?define ProductCode="*"?>
 	<?else?>
-	<?define ProductCode="{340C6590-BEE0-4532-9C66-9AAC5F08AA12}"?>
+	<?define ProductCode="*"?>
 	<?endif?>
 
 	<?define UpgradeCode = "{34E862DC-9D7F-4008-AA42-DECBF94A143E}"?>
@@ -28,10 +28,11 @@
 				Keywords="!(loc.Keywords)"
 				Comments="!(loc.Comments)"
 				Languages="!(loc.Language)"
+				InstallPrivileges="elevated"
 				/>
 
 		<!-- Downgrade message -->
-		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeMessage)" />
+		<MajorUpgrade AllowSameVersionUpgrades="yes" DowngradeErrorMessage="!(loc.DowngradeMessage)" Schedule="afterInstallValidate" />
 		<!-- Include cab file -->
 		<MediaTemplate
 			EmbedCab="yes"
