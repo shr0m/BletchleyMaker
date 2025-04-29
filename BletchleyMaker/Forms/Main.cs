@@ -139,11 +139,6 @@ namespace BletchleyMaker
             outputBox.Text = process;
         }
 
-        private void copyButton_Click(object sender, EventArgs e)
-        {
-            inputBox.Text = outputBox.Text;
-        }
-
         private void guideToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://raf.mod.uk/aircadets/") { UseShellExecute = true });
@@ -291,6 +286,18 @@ namespace BletchleyMaker
                 execute.PerformClick();
                 this.Show();
                 MessageBox.Show("Savefile successfully opened", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+        }
+
+        private void copyButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Clipboard.SetText(outputBox.Text);
+            }
+            catch (Exception)
+            {
+                return;
             }
         }
     }
