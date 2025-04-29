@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Reflection;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using System.Windows.Forms;  // Required for MessageBox and DialogResult
 
 namespace BletchleyMaker.Functions
 {
@@ -20,7 +22,7 @@ namespace BletchleyMaker.Functions
                     JObject json = JObject.Parse(jsonResponse);
 
                     string latestVersion = json["latestVersion"]!.ToString();
-                    string currentVersion = "2.1.1.0";
+                    string currentVersion = GetCurrentAssemblyVersion();
 
                     if (latestVersion != currentVersion)
                     {
@@ -33,6 +35,13 @@ namespace BletchleyMaker.Functions
                     return;
                 }
             }
+        }
+
+        private static string GetCurrentAssemblyVersion()
+        {
+            // Retrieve the current assembly version
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+            return version.ToString();  // This will return the version in format "major.minor.build.revision"
         }
 
         private static void ShowUpdateNotification(JObject json)
@@ -49,5 +58,4 @@ namespace BletchleyMaker.Functions
             }
         }
     }
-
 }
