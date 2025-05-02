@@ -26,7 +26,7 @@ namespace BletchleyMaker
 
             if (args != null && args.Length > 0 && File.Exists(args[0]))
             {
-                LoadBmcFile(new Open(args[0])); // Create this method or reuse your logic
+                LoadBmcFile(new Open(args[0]));
             }
         }
 
