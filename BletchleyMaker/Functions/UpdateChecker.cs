@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using System.Windows.Forms;  // Required for MessageBox and DialogResult
+using System.Windows.Forms;
 
 namespace BletchleyMaker.Functions
 {
@@ -41,7 +41,7 @@ namespace BletchleyMaker.Functions
         {
             // Retrieve the current assembly version
             var version = Assembly.GetExecutingAssembly().GetName().Version;
-            return version.ToString();  // This will return the version in format "major.minor.build.revision"
+            return version.ToString();
         }
 
         private static void ShowUpdateNotification(JObject json)
