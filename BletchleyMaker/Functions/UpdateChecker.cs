@@ -41,7 +41,7 @@ namespace BletchleyMaker.Functions
         {
             // Retrieve the current assembly version
             var version = Assembly.GetExecutingAssembly().GetName().Version;
-            return version.ToString();
+            return version!.ToString();
         }
 
         private static void ShowUpdateNotification(JObject json)
