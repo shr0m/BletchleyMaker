@@ -81,7 +81,7 @@ namespace BletchleyMaker
                 cipher.Encode(grid.GetGrid());
             }
 
-            if (splitBox.Checked)
+            if (menuSplitBox.Checked)
             {
                 CleanUpText(cipher.GetText());
             }
@@ -154,10 +154,6 @@ namespace BletchleyMaker
             Process.Start(new ProcessStartInfo("https://github.com/shr0m/BletchleyMaker?tab=readme-ov-file#support") { UseShellExecute = true });
         }
 
-        private void printToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Print print = new Print(grid.GetGrid(), savedCodes);
-        }
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -179,18 +175,6 @@ namespace BletchleyMaker
             }
         }
 
-        private void splitBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (splitBox.Checked)
-            {
-                CleanUpText(outputBox.Text);
-            }
-            else
-            {
-                outputBox.Text = outputBox.Text.Replace(" ", "");
-            }
-        }
-
         private void addCode_Click(object sender, EventArgs e)
         {
             if (savedCodes.Count != 10)
@@ -199,7 +183,7 @@ namespace BletchleyMaker
                 execute.PerformClick();
                 if (outputBox.Text.Replace(" ", "") != "")
                 {
-                    if (!splitBox.Checked)
+                    if (!menuSplitBox.Checked)
                     {
                         CleanUpText(outputBox.Text);
                     }
@@ -299,6 +283,49 @@ namespace BletchleyMaker
             {
                 return;
             }
+        }
+
+        private void menuSplitBox_CheckedChanged(object sender, EventArgs e)
+        {
+            execute.PerformClick();
+        }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool go = true;
+            if (savedCodes.Count == 0 )
+            {
+                DialogResult r = MessageBox.Show("There are no codes saved, continue?", "No codes saved", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+
+                if (r == DialogResult.No)
+                {
+                    go = false;
+                }
+            }
+
+            if (go)
+            {
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                    saveFileDialog.Title = "Export Grid to PDF";
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        // Get the file path from the dialog
+                        string pdfPath = saveFileDialog.FileName;
+
+                        // Create an instance of Export with grid and codes
+                        Export export = new Export(grid.GetGrid(), savedCodes);
+
+                        // Export to the selected PDF file path
+                        export.ExportToPdf(pdfPath);
+                    }
+                }
+            }
+            else
+            { return; }
+            
         }
     }
 }
