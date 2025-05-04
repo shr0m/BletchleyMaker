@@ -146,7 +146,7 @@ namespace BletchleyMaker
 
         private void errorReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://github.com/shr0m/BletchleyMaker/issues") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://github.com/shr0m/BletchleyMaker/issues/new") { UseShellExecute = true });
         }
 
         private void feedbackToolStripMenuItem_Click(object sender, EventArgs e)
