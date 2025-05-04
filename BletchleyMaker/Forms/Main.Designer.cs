@@ -669,20 +669,20 @@
             newGridToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manualAddToolStripMenuItem, generateToolStripMenuItem });
             newGridToolStripMenuItem.Image = Properties.Resources.addition;
             newGridToolStripMenuItem.Name = "newGridToolStripMenuItem";
-            newGridToolStripMenuItem.Size = new Size(196, 38);
+            newGridToolStripMenuItem.Size = new Size(127, 22);
             newGridToolStripMenuItem.Text = "New Grid";
             // 
             // manualAddToolStripMenuItem
             // 
             manualAddToolStripMenuItem.Name = "manualAddToolStripMenuItem";
-            manualAddToolStripMenuItem.Size = new Size(180, 22);
+            manualAddToolStripMenuItem.Size = new Size(142, 22);
             manualAddToolStripMenuItem.Text = "Manual Add";
             manualAddToolStripMenuItem.Click += manualAddToolStripMenuItem_Click;
             // 
             // generateToolStripMenuItem
             // 
             generateToolStripMenuItem.Name = "generateToolStripMenuItem";
-            generateToolStripMenuItem.Size = new Size(180, 22);
+            generateToolStripMenuItem.Size = new Size(142, 22);
             generateToolStripMenuItem.Text = "Generate";
             generateToolStripMenuItem.Click += generateToolStripMenuItem_Click;
             // 
@@ -690,7 +690,7 @@
             // 
             printToolStripMenuItem.Image = Properties.Resources.saveimg;
             printToolStripMenuItem.Name = "printToolStripMenuItem";
-            printToolStripMenuItem.Size = new Size(196, 38);
+            printToolStripMenuItem.Size = new Size(127, 22);
             printToolStripMenuItem.Text = "Save";
             printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
@@ -698,7 +698,7 @@
             // 
             supportToolStripMenuItem1.Image = Properties.Resources.openimg;
             supportToolStripMenuItem1.Name = "supportToolStripMenuItem1";
-            supportToolStripMenuItem1.Size = new Size(196, 38);
+            supportToolStripMenuItem1.Size = new Size(127, 22);
             supportToolStripMenuItem1.Text = "Open";
             supportToolStripMenuItem1.Click += supportToolStripMenuItem1_Click;
             // 
@@ -706,7 +706,7 @@
             // 
             exportToolStripMenuItem1.Image = Properties.Resources.printimg;
             exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            exportToolStripMenuItem1.Size = new Size(196, 38);
+            exportToolStripMenuItem1.Size = new Size(127, 22);
             exportToolStripMenuItem1.Text = "Export";
             exportToolStripMenuItem1.Click += exportToolStripMenuItem_Click;
             // 
@@ -721,28 +721,30 @@
             // 
             outputSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuSplitBox });
             outputSettingsToolStripMenuItem.Name = "outputSettingsToolStripMenuItem";
-            outputSettingsToolStripMenuItem.Size = new Size(158, 22);
+            outputSettingsToolStripMenuItem.Size = new Size(180, 22);
             outputSettingsToolStripMenuItem.Text = "Output Settings";
             // 
             // menuSplitBox
             // 
+            menuSplitBox.Checked = true;
             menuSplitBox.CheckOnClick = true;
+            menuSplitBox.CheckState = CheckState.Checked;
             menuSplitBox.Name = "menuSplitBox";
-            menuSplitBox.Size = new Size(122, 22);
+            menuSplitBox.Size = new Size(180, 22);
             menuSplitBox.Text = "Split Text";
             menuSplitBox.CheckedChanged += menuSplitBox_CheckedChanged;
             // 
             // printCodesToolStripMenuItem
             // 
             printCodesToolStripMenuItem.Name = "printCodesToolStripMenuItem";
-            printCodesToolStripMenuItem.Size = new Size(158, 22);
+            printCodesToolStripMenuItem.Size = new Size(180, 22);
             printCodesToolStripMenuItem.Text = "Print Codes";
             printCodesToolStripMenuItem.Click += printCodesToolStripMenuItem_Click;
             // 
             // characterSetToolStripMenuItem
             // 
             characterSetToolStripMenuItem.Name = "characterSetToolStripMenuItem";
-            characterSetToolStripMenuItem.Size = new Size(158, 22);
+            characterSetToolStripMenuItem.Size = new Size(180, 22);
             characterSetToolStripMenuItem.Text = "Character Set";
             characterSetToolStripMenuItem.Click += characterSetToolStripMenuItem_Click;
             // 
