@@ -293,7 +293,7 @@ namespace BletchleyMaker
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bool go = true;
-            if (savedCodes.Count == 0 )
+            if (savedCodes.Count == 0)
             {
                 DialogResult r = MessageBox.Show("There are no codes saved, continue?", "No codes saved", MessageBoxButtons.YesNo, MessageBoxIcon.None);
 
@@ -325,7 +325,13 @@ namespace BletchleyMaker
             }
             else
             { return; }
-            
+
+        }
+
+        private void automationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Automation auto = new Automation();
+            auto.ShowDialog();
         }
     }
 }
