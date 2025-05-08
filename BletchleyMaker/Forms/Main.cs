@@ -28,6 +28,8 @@ namespace BletchleyMaker
             {
                 LoadBmcFile(new Open(args[0]));
             }
+
+            CheckRuleZero();
         }
 
         private void makeGrid_Click(object sender, EventArgs e)
@@ -330,8 +332,34 @@ namespace BletchleyMaker
 
         private void automationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Automation auto = new Automation();
+            Automation auto = new Automation(this);
             auto.ShowDialog();
+        }
+
+        public void SetRules(List<string> submit)
+        {
+            Rules.Clear();
+            Rules = submit;
+        }
+
+        public void CheckRuleZero()
+        {
+            if (Rules.Count != 0)
+            {
+                ruleBox.Visible = false;
+                resetAutomation.Visible = true;
+            }
+            else
+            {
+                ruleBox.Visible = true;
+                resetAutomation.Visible = false;
+            }
+        }
+
+        private void resetAutomation_Click(object sender, EventArgs e)
+        {
+            Rules.Clear();
+            CheckRuleZero();
         }
     }
 }

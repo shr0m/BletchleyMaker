@@ -88,6 +88,7 @@
             menuSplitBox = new ToolStripMenuItem();
             printCodesToolStripMenuItem = new ToolStripMenuItem();
             characterSetToolStripMenuItem = new ToolStripMenuItem();
+            automationToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             guideToolStripMenuItem = new ToolStripMenuItem();
             githubRepositoryToolStripMenuItem = new ToolStripMenuItem();
@@ -95,7 +96,7 @@
             feedbackToolStripMenuItem = new ToolStripMenuItem();
             addCode = new Button();
             copyButton = new Button();
-            automationToolStripMenuItem = new ToolStripMenuItem();
+            resetAutomation = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -559,7 +560,7 @@
             // inputBox
             // 
             inputBox.Location = new Point(628, 595);
-            inputBox.Margin = new Padding(6, 6, 6, 6);
+            inputBox.Margin = new Padding(6);
             inputBox.Name = "inputBox";
             inputBox.Size = new Size(524, 39);
             inputBox.TabIndex = 44;
@@ -580,7 +581,7 @@
             // ruleBox
             // 
             ruleBox.Location = new Point(628, 474);
-            ruleBox.Margin = new Padding(6, 6, 6, 6);
+            ruleBox.Margin = new Padding(6);
             ruleBox.Name = "ruleBox";
             ruleBox.Size = new Size(158, 39);
             ruleBox.TabIndex = 47;
@@ -629,7 +630,7 @@
             decodeCheck.AutoSize = true;
             decodeCheck.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             decodeCheck.Location = new Point(834, 480);
-            decodeCheck.Margin = new Padding(6, 6, 6, 6);
+            decodeCheck.Margin = new Padding(6);
             decodeCheck.Name = "decodeCheck";
             decodeCheck.Size = new Size(135, 35);
             decodeCheck.TabIndex = 52;
@@ -642,7 +643,7 @@
             outputBox.CharacterCasing = CharacterCasing.Upper;
             outputBox.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             outputBox.Location = new Point(604, 109);
-            outputBox.Margin = new Padding(6, 6, 6, 6);
+            outputBox.Margin = new Padding(6);
             outputBox.MaxLength = 44;
             outputBox.Multiline = true;
             outputBox.Name = "outputBox";
@@ -660,7 +661,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(11, 4, 0, 4);
-            menuStrip1.Size = new Size(1222, 46);
+            menuStrip1.Size = new Size(1222, 43);
             menuStrip1.TabIndex = 57;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -670,7 +671,7 @@
             supportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newGridToolStripMenuItem, printToolStripMenuItem, supportToolStripMenuItem1, exportToolStripMenuItem1 });
             supportToolStripMenuItem.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            supportToolStripMenuItem.Size = new Size(76, 38);
+            supportToolStripMenuItem.Size = new Size(76, 35);
             supportToolStripMenuItem.Text = "File";
             // 
             // newGridToolStripMenuItem
@@ -723,14 +724,14 @@
             // 
             editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { outputSettingsToolStripMenuItem, printCodesToolStripMenuItem, characterSetToolStripMenuItem, automationToolStripMenuItem });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(74, 38);
+            editToolStripMenuItem.Size = new Size(74, 35);
             editToolStripMenuItem.Text = "Edit";
             // 
             // outputSettingsToolStripMenuItem
             // 
             outputSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuSplitBox });
             outputSettingsToolStripMenuItem.Name = "outputSettingsToolStripMenuItem";
-            outputSettingsToolStripMenuItem.Size = new Size(359, 44);
+            outputSettingsToolStripMenuItem.Size = new Size(313, 44);
             outputSettingsToolStripMenuItem.Text = "Output Settings";
             // 
             // menuSplitBox
@@ -746,22 +747,29 @@
             // printCodesToolStripMenuItem
             // 
             printCodesToolStripMenuItem.Name = "printCodesToolStripMenuItem";
-            printCodesToolStripMenuItem.Size = new Size(359, 44);
+            printCodesToolStripMenuItem.Size = new Size(313, 44);
             printCodesToolStripMenuItem.Text = "Print Codes";
             printCodesToolStripMenuItem.Click += printCodesToolStripMenuItem_Click;
             // 
             // characterSetToolStripMenuItem
             // 
             characterSetToolStripMenuItem.Name = "characterSetToolStripMenuItem";
-            characterSetToolStripMenuItem.Size = new Size(359, 44);
+            characterSetToolStripMenuItem.Size = new Size(313, 44);
             characterSetToolStripMenuItem.Text = "Character Set";
             characterSetToolStripMenuItem.Click += characterSetToolStripMenuItem_Click;
+            // 
+            // automationToolStripMenuItem
+            // 
+            automationToolStripMenuItem.Name = "automationToolStripMenuItem";
+            automationToolStripMenuItem.Size = new Size(313, 44);
+            automationToolStripMenuItem.Text = "Automation";
+            automationToolStripMenuItem.Click += automationToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { guideToolStripMenuItem, githubRepositoryToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(82, 38);
+            helpToolStripMenuItem.Size = new Size(82, 35);
             helpToolStripMenuItem.Text = "Help";
             // 
             // guideToolStripMenuItem
@@ -798,7 +806,7 @@
             // 
             addCode.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addCode.Location = new Point(882, 386);
-            addCode.Margin = new Padding(6, 6, 6, 6);
+            addCode.Margin = new Padding(6);
             addCode.Name = "addCode";
             addCode.Size = new Size(150, 53);
             addCode.TabIndex = 59;
@@ -810,7 +818,7 @@
             // 
             copyButton.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             copyButton.Location = new Point(1044, 386);
-            copyButton.Margin = new Padding(6, 6, 6, 6);
+            copyButton.Margin = new Padding(6);
             copyButton.Name = "copyButton";
             copyButton.Size = new Size(150, 53);
             copyButton.TabIndex = 60;
@@ -818,12 +826,17 @@
             copyButton.UseVisualStyleBackColor = true;
             copyButton.Click += copyButton_Click_1;
             // 
-            // automationToolStripMenuItem
+            // resetAutomation
             // 
-            automationToolStripMenuItem.Name = "automationToolStripMenuItem";
-            automationToolStripMenuItem.Size = new Size(359, 44);
-            automationToolStripMenuItem.Text = "Automation";
-            automationToolStripMenuItem.Click += automationToolStripMenuItem_Click;
+            resetAutomation.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resetAutomation.Location = new Point(648, 470);
+            resetAutomation.Name = "resetAutomation";
+            resetAutomation.Size = new Size(150, 46);
+            resetAutomation.TabIndex = 61;
+            resetAutomation.Text = "Reset";
+            resetAutomation.UseVisualStyleBackColor = true;
+            resetAutomation.Visible = false;
+            resetAutomation.Click += resetAutomation_Click;
             // 
             // Main
             // 
@@ -831,6 +844,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1222, 734);
+            Controls.Add(resetAutomation);
             Controls.Add(copyButton);
             Controls.Add(addCode);
             Controls.Add(outputBox);
@@ -964,5 +978,6 @@
         private ToolStripMenuItem outputSettingsToolStripMenuItem;
         private ToolStripMenuItem menuSplitBox;
         private ToolStripMenuItem automationToolStripMenuItem;
+        private Button resetAutomation;
     }
 }

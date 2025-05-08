@@ -13,9 +13,11 @@ namespace BletchleyMaker.Forms
     public partial class Automation : Form
     {
         List<string> Rules = new List<string>();
-        public Automation()
+        private Main Form;
+        public Automation(Main main)
         {
             InitializeComponent();
+            Form = main;
         }
 
         // Cancel button
@@ -37,6 +39,8 @@ namespace BletchleyMaker.Forms
             else
             {
                 Rules = rules.ToList();
+                Form.SetRules(Rules);
+                Form.CheckRuleZero();
             }
         }
 
@@ -52,11 +56,6 @@ namespace BletchleyMaker.Forms
                 }
             }
             return true;
-        }
-
-        public List<string> GetRules()
-        {
-            return Rules;
         }
     }
 }
