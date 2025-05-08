@@ -11,7 +11,7 @@ A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The p
 
 ## Tool Use
 To install the application, download the MSI file [here](https://github.com/shr0m/BletchleyMaker/releases).
-If you are changing to a newer version:
+The program should automatically update the existing files to a newer version. If this does not work:
 - Win+S, then search for 'Add or Remove Programs'
 - Scroll or search 'BletchleyMaker' and uninstall the old version
 - Rerun the MSI installer
