@@ -62,11 +62,14 @@ namespace BletchleyMaker
         {
             string input = inputBox.Text.ToUpper().Trim();
             string rule = ruleBox.Text.ToUpper().Trim();
+            bool clearEnd = false;
 
             if (!ValidateRule(rule))
             { return; }
+            else
+            { Rules.Clear(); Rules.Add(rule); clearEnd = true; }
 
-            Cipher cipher = new Cipher(input, rule);
+            Cipher cipher = new Cipher(input, rule /*Change this */);
 
             if (!(grid.ValidateCharacterSet(cipher.GetText())))
             {
@@ -91,6 +94,9 @@ namespace BletchleyMaker
             {
                 outputBox.Text = cipher.GetText();
             }
+
+            if (clearEnd)
+            { Rules.Clear(); }
         }
 
         private bool ValidateRule(string rule)
@@ -332,7 +338,7 @@ namespace BletchleyMaker
 
         private void automationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Automation auto = new Automation(this);
+            Automation auto = new Automation(this, Rules);
             auto.ShowDialog();
         }
 
@@ -346,6 +352,7 @@ namespace BletchleyMaker
         {
             if (Rules.Count != 0)
             {
+                ruleBox.Text = "";
                 ruleBox.Visible = false;
                 resetAutomation.Visible = true;
             }
