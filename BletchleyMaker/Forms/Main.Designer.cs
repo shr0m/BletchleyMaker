@@ -95,6 +95,7 @@
             feedbackToolStripMenuItem = new ToolStripMenuItem();
             addCode = new Button();
             copyButton = new Button();
+            settingsToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -712,7 +713,7 @@
             // 
             // editToolStripMenuItem
             // 
-            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { outputSettingsToolStripMenuItem, printCodesToolStripMenuItem, characterSetToolStripMenuItem });
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { outputSettingsToolStripMenuItem, printCodesToolStripMenuItem, characterSetToolStripMenuItem, settingsToolStripMenuItem });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(40, 20);
             editToolStripMenuItem.Text = "Edit";
@@ -722,7 +723,7 @@
             outputSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuSplitBox });
             outputSettingsToolStripMenuItem.Name = "outputSettingsToolStripMenuItem";
             outputSettingsToolStripMenuItem.Size = new Size(180, 22);
-            outputSettingsToolStripMenuItem.Text = "Output Settings";
+            outputSettingsToolStripMenuItem.Text = "Output";
             // 
             // menuSplitBox
             // 
@@ -806,6 +807,13 @@
             copyButton.Text = "Copy";
             copyButton.UseVisualStyleBackColor = true;
             copyButton.Click += copyButton_Click_1;
+            // 
+            // settingsToolStripMenuItem
+            // 
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Size = new Size(180, 22);
+            settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // Main
             // 
@@ -945,5 +953,6 @@
         private Button copyButton;
         private ToolStripMenuItem outputSettingsToolStripMenuItem;
         private ToolStripMenuItem menuSplitBox;
+        private ToolStripMenuItem settingsToolStripMenuItem;
     }
 }

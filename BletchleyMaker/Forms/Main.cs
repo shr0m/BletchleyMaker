@@ -176,17 +176,31 @@ namespace BletchleyMaker
 
         private void addCode_Click(object sender, EventArgs e)
         {
+            string addCode = outputBox.Text;
             if (savedCodes.Count != 10)
             {
                 decodeCheck.Checked = false;
                 execute.PerformClick();
-                if (outputBox.Text.Replace(" ", "") != "")
+                if (addCode.Replace(" ", "") != "")
                 {
                     if (!menuSplitBox.Checked)
                     {
-                        CleanUpText(outputBox.Text);
+                        CleanUpText(addCode);
                     }
-                    savedCodes.Add(ruleBox.Text.ToUpper() + "   " + outputBox.Text);
+
+                    addCode = ruleBox.Text.ToUpper() + "   " + addCode;
+
+                    foreach (string code in savedCodes)
+                    {
+                        if (code.Split("   ")[0] == ruleBox.Text)
+                        {
+                            DialogResult r = MessageBox.Show("You already have a code with this rule", "Continue?", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+                            if (r == DialogResult.No)
+                            { return; }
+                        }
+                    }
+
+                    savedCodes.Add(addCode);
                     MessageBox.Show("Code added", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
                     return;
                 }
@@ -292,7 +306,7 @@ namespace BletchleyMaker
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bool go = true;
-            if (savedCodes.Count == 0 )
+            if (savedCodes.Count == 0)
             {
                 DialogResult r = MessageBox.Show("There are no codes saved, continue?", "No codes saved", MessageBoxButtons.YesNo, MessageBoxIcon.None);
 
@@ -324,7 +338,13 @@ namespace BletchleyMaker
             }
             else
             { return; }
-            
+
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings setting = new Settings();
+            setting.ShowDialog();
         }
     }
 }
