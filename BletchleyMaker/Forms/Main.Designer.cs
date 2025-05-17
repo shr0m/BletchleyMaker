@@ -95,7 +95,7 @@
             feedbackToolStripMenuItem = new ToolStripMenuItem();
             addCode = new Button();
             copyButton = new Button();
-            settingsToolStripMenuItem = new ToolStripMenuItem();
+            hideIndex = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -568,7 +568,7 @@
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Control;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(338, 203);
+            label3.Location = new Point(338, 209);
             label3.Name = "label3";
             label3.Size = new Size(88, 16);
             label3.TabIndex = 46;
@@ -577,7 +577,7 @@
             // 
             // ruleBox
             // 
-            ruleBox.Location = new Point(338, 222);
+            ruleBox.Location = new Point(338, 229);
             ruleBox.Name = "ruleBox";
             ruleBox.Size = new Size(87, 23);
             ruleBox.TabIndex = 47;
@@ -623,7 +623,7 @@
             // 
             decodeCheck.AutoSize = true;
             decodeCheck.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            decodeCheck.Location = new Point(449, 225);
+            decodeCheck.Location = new Point(392, 31);
             decodeCheck.Name = "decodeCheck";
             decodeCheck.Size = new Size(70, 20);
             decodeCheck.TabIndex = 52;
@@ -713,7 +713,7 @@
             // 
             // editToolStripMenuItem
             // 
-            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { outputSettingsToolStripMenuItem, printCodesToolStripMenuItem, characterSetToolStripMenuItem, settingsToolStripMenuItem });
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { outputSettingsToolStripMenuItem, printCodesToolStripMenuItem, characterSetToolStripMenuItem });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(40, 20);
             editToolStripMenuItem.Text = "Edit";
@@ -722,7 +722,7 @@
             // 
             outputSettingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuSplitBox });
             outputSettingsToolStripMenuItem.Name = "outputSettingsToolStripMenuItem";
-            outputSettingsToolStripMenuItem.Size = new Size(180, 22);
+            outputSettingsToolStripMenuItem.Size = new Size(149, 22);
             outputSettingsToolStripMenuItem.Text = "Output";
             // 
             // menuSplitBox
@@ -731,21 +731,21 @@
             menuSplitBox.CheckOnClick = true;
             menuSplitBox.CheckState = CheckState.Checked;
             menuSplitBox.Name = "menuSplitBox";
-            menuSplitBox.Size = new Size(180, 22);
+            menuSplitBox.Size = new Size(122, 22);
             menuSplitBox.Text = "Split Text";
             menuSplitBox.CheckedChanged += menuSplitBox_CheckedChanged;
             // 
             // printCodesToolStripMenuItem
             // 
             printCodesToolStripMenuItem.Name = "printCodesToolStripMenuItem";
-            printCodesToolStripMenuItem.Size = new Size(180, 22);
+            printCodesToolStripMenuItem.Size = new Size(149, 22);
             printCodesToolStripMenuItem.Text = "Print Codes";
             printCodesToolStripMenuItem.Click += printCodesToolStripMenuItem_Click;
             // 
             // characterSetToolStripMenuItem
             // 
             characterSetToolStripMenuItem.Name = "characterSetToolStripMenuItem";
-            characterSetToolStripMenuItem.Size = new Size(180, 22);
+            characterSetToolStripMenuItem.Size = new Size(149, 22);
             characterSetToolStripMenuItem.Text = "Character Set";
             characterSetToolStripMenuItem.Click += characterSetToolStripMenuItem_Click;
             // 
@@ -789,7 +789,7 @@
             // addCode
             // 
             addCode.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addCode.Location = new Point(475, 181);
+            addCode.Location = new Point(338, 181);
             addCode.Name = "addCode";
             addCode.Size = new Size(81, 25);
             addCode.TabIndex = 59;
@@ -808,12 +808,16 @@
             copyButton.UseVisualStyleBackColor = true;
             copyButton.Click += copyButton_Click_1;
             // 
-            // settingsToolStripMenuItem
+            // hideIndex
             // 
-            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(180, 22);
-            settingsToolStripMenuItem.Text = "Settings";
-            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
+            hideIndex.AutoSize = true;
+            hideIndex.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            hideIndex.Location = new Point(425, 185);
+            hideIndex.Name = "hideIndex";
+            hideIndex.Size = new Size(84, 19);
+            hideIndex.TabIndex = 61;
+            hideIndex.Text = "Hide index";
+            hideIndex.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -821,6 +825,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(658, 344);
+            Controls.Add(hideIndex);
             Controls.Add(copyButton);
             Controls.Add(addCode);
             Controls.Add(outputBox);
@@ -953,6 +958,6 @@
         private Button copyButton;
         private ToolStripMenuItem outputSettingsToolStripMenuItem;
         private ToolStripMenuItem menuSplitBox;
-        private ToolStripMenuItem settingsToolStripMenuItem;
+        private CheckBox hideIndex;
     }
 }

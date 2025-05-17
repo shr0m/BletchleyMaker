@@ -120,10 +120,13 @@ namespace BletchleyMaker
             {
                 decodeCheck.Visible = false;
                 decodeCheck.Checked = false;
+                hideIndex.Visible = false;
+                hideIndex.Checked = false;
             }
             else
             {
                 decodeCheck.Visible = true;
+                hideIndex.Visible = true;
             }
         }
 
@@ -189,17 +192,10 @@ namespace BletchleyMaker
                     }
 
                     addCode = ruleBox.Text.ToUpper() + "   " + addCode;
-
-                    foreach (string code in savedCodes)
+                    if (hideIndex.Checked)
                     {
-                        if (code.Split("   ")[0] == ruleBox.Text)
-                        {
-                            DialogResult r = MessageBox.Show("You already have a code with this rule", "Continue?", MessageBoxButtons.YesNo, MessageBoxIcon.None);
-                            if (r == DialogResult.No)
-                            { return; }
-                        }
+                        addCode = addCode.Remove(1,1);
                     }
-
                     savedCodes.Add(addCode);
                     MessageBox.Show("Code added", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
                     return;
@@ -339,12 +335,6 @@ namespace BletchleyMaker
             else
             { return; }
 
-        }
-
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Settings setting = new Settings();
-            setting.ShowDialog();
         }
     }
 }
