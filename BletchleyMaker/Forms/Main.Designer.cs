@@ -598,7 +598,7 @@
             // execute
             // 
             execute.Font = new Font("Arial", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            execute.Location = new Point(469, 306);
+            execute.Location = new Point(439, 306);
             execute.Margin = new Padding(2, 1, 2, 1);
             execute.Name = "execute";
             execute.Size = new Size(87, 28);
@@ -623,7 +623,7 @@
             // 
             decodeCheck.AutoSize = true;
             decodeCheck.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            decodeCheck.Location = new Point(392, 31);
+            decodeCheck.Location = new Point(439, 230);
             decodeCheck.Name = "decodeCheck";
             decodeCheck.Size = new Size(70, 20);
             decodeCheck.TabIndex = 52;
