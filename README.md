@@ -20,10 +20,8 @@ The program should automatically update the existing files to a newer version. I
 - Generate: Generates a new random 6x6 grid including letters A-Z and 0-9
 - Execute: Takes string from 'Text to Convert' and applies the reverse of the decode rule to encode
 - Decode: If checked, will decode string from 'Text to Convert' with the decode rule as entered
-- Split Text: Will split the output into groups of 5 to align with cipher rules
-- Convert Output: Will copy text from output into 'Text to Convert'
-- Add to Print: Will add the code in Output to print with the grid
-- View Print Codes: Will show the list of codes which are saved to print with the grid (maximum 10). You may clear the print save or remove elements should you wish
+- Save Code: Will add the code in Output to print with the grid
+- Hide index: Will remove the index of spaces from the saved code. For example 'L2' would become 'L'
 - Menu: Provides additional functionality, such as printing, reporting errors, and creating own grids
 
 ## License
