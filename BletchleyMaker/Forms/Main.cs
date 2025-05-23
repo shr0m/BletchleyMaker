@@ -58,7 +58,24 @@ namespace BletchleyMaker
         private void execute_Click(object sender, EventArgs e)
         {
             string input = inputBox.Text.ToUpper().Trim();
-            string rule = ruleBox.Text.ToUpper().Trim();
+            string rule;
+            if (checkBox1.Checked)
+            {
+                string[] directions = { "X", "U", "D", "L", "R" };
+                Random rnd = new Random();
+                rule = directions[rnd.Next(0, directions.Length)];
+
+                if (rule != "X")
+                {
+                    rule = rule + rnd.Next(1, 6).ToString();
+                }
+                ruleLabel.Text = rule;
+            }
+            else
+            {
+                rule = ruleBox.Text.ToUpper().Trim();
+            }
+            
 
             if (!ValidateRule(rule))
             { return; }
@@ -194,7 +211,7 @@ namespace BletchleyMaker
                     addCode = ruleBox.Text.ToUpper() + "   " + addCode;
                     if (hideIndex.Checked)
                     {
-                        addCode = addCode.Remove(1,1);
+                        addCode = addCode.Remove(1, 1);
                     }
                     savedCodes.Add(addCode);
                     MessageBox.Show("Code added", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
@@ -335,6 +352,17 @@ namespace BletchleyMaker
             else
             { return; }
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            decodeCheck.Checked = false;
+            decodeCheck.Visible = false;
+
+            ruleBox.Text = string.Empty;
+            ruleBox.Visible = false;
+
+            ruleLabel.Visible = true;
         }
     }
 }
