@@ -356,13 +356,26 @@ namespace BletchleyMaker
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            decodeCheck.Checked = false;
-            decodeCheck.Visible = false;
+            if (checkBox1.Checked)
+            {
+                decodeCheck.Checked = false;
+                decodeCheck.Visible = false;
 
-            ruleBox.Text = string.Empty;
-            ruleBox.Visible = false;
+                ruleBox.Text = string.Empty;
+                ruleBox.Visible = false;
 
-            ruleLabel.Visible = true;
+                ruleLabel.Visible = true;
+            }
+            else
+            {
+                decodeCheck.Visible = true;
+
+                ruleBox.Text = string.Empty;
+                ruleBox.Visible = true;
+
+                ruleLabel.Visible = false;
+            }
+
         }
     }
 }
