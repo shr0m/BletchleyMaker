@@ -22,6 +22,7 @@ The program should automatically update the existing files to a newer version. I
 - Decode: If checked, will decode string from 'Text to Convert' with the decode rule as entered
 - Save Code: Will add the code in Output to print with the grid
 - Hide index: Will remove the index of spaces from the saved code. For example 'L2' would become 'L'
+- Randomise rule: Will ignore any value in the rulebox and create a random rule value to use
 - Menu: Provides additional functionality, such as printing, reporting errors, and creating own grids
 
 ## License
