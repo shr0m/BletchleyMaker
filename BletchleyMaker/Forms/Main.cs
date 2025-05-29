@@ -200,7 +200,6 @@ namespace BletchleyMaker
             if (savedCodes.Count != 10)
             {
                 decodeCheck.Checked = false;
-                execute.PerformClick();
                 if (addCode.Replace(" ", "") != "")
                 {
                     if (!menuSplitBox.Checked)
