@@ -208,7 +208,15 @@ namespace BletchleyMaker
                         CleanUpText(addCode);
                     }
 
-                    addCode = ruleBox.Text.ToUpper() + "   " + addCode;
+                    if (ruleBox.Visible)
+                    {
+                        addCode = ruleBox.Text.ToUpper() + "   " + addCode;
+                    }
+                    else
+                    {
+                        addCode = ruleLabel.Text.ToUpper() + "   " + addCode;
+                    }
+
                     if (hideIndex.Checked)
                     {
                         addCode = addCode.Remove(1, 1);
