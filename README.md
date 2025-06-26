@@ -27,6 +27,9 @@ The program should automatically update the existing files to a newer version. I
 - Randomise rule: Will ignore any value in the rulebox and create a random rule value to use
 - Menu: Provides additional functionality, such as printing, reporting errors, and creating own grids
 
+## Security
+Please be aware that this application is not CA signed, and may be flagged by antivirus. If you have any queries about the security of this application, please contact the developer within the support section of this file. It is recommended that all files which you download are scanned by VirusTotal. The upload page to check for malware can be found [here](https://www.virustotal.com/gui/home/upload)
+
 ## License
 See [LICENSE](./LICENSE) for information regarding license(s)
 
