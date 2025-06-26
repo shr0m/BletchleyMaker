@@ -3,6 +3,8 @@
 
 A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The purpose of this tool is to encode sentences and create decode grids for the Air Cadet Bletchley Park cipher. This automates the process of making codes for Air Cadet activities.
 
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue)
+
 ## Features Available
 - Encoding plaintext sentences into Bletchley Park ciphertext
 - Generating a randomised decryption table (6x6 A-Z 0-9)
