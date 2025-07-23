@@ -3,6 +3,8 @@
 
 A personal project aimed at RAFAC (RAF Air Cadet) code-breaking exercises. The purpose of this tool is to encode sentences and create decode grids for the Air Cadet Bletchley Park cipher. This automates the process of making codes for Air Cadet activities.
 
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue)
+
 ## Features Available
 - Encoding plaintext sentences into Bletchley Park ciphertext
 - Generating a randomised decryption table (6x6 A-Z 0-9)
@@ -24,6 +26,9 @@ The program should automatically update the existing files to a newer version. I
 - Hide index: Will remove the index of spaces from the saved code. For example 'L2' would become 'L'
 - Randomise rule: Will ignore any value in the rulebox and create a random rule value to use
 - Menu: Provides additional functionality, such as printing, reporting errors, and creating own grids
+
+## Security
+Please be aware that this application is not CA signed, and may be flagged by antivirus. If you have any queries about the security of this application, please contact the developer within the support section of this file. It is recommended that all files which you download are scanned by VirusTotal. The upload page to check for malware can be found [here](https://www.virustotal.com/gui/home/upload)
 
 ## License
 See [LICENSE](./LICENSE) for information regarding license(s)
