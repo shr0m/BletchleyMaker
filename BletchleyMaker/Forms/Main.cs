@@ -10,7 +10,6 @@ namespace BletchleyMaker
         internal Grid grid;
         private List<Label> componentArray;
         private List<string> savedCodes;
-        private List<string> savedAnswers;
         private ViewCodes view = null!;
         private List<char> Chars = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
@@ -222,7 +221,6 @@ namespace BletchleyMaker
                         addCode = addCode.Remove(1, 1);
                     }
                     savedCodes.Add(addCode);
-                    savedAnswers.Add(inputBox.Text.ToUpper());
                     MessageBox.Show("Code added", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
                     return;
                 }
